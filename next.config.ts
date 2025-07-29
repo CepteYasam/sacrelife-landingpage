@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'standalone', // Docker için gerekli
+  output: 'export', // Statik export için
+  trailingSlash: true, // Amplify için gerekli
   images: {
+    unoptimized: true, // Statik export için gerekli
     remotePatterns: [
       {
         protocol: 'https',
