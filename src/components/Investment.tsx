@@ -44,7 +44,7 @@ const Investment = ({ lang, onContactClick }: InvestmentProps) => {
                 },
                 tooltip: {
                     callbacks: {
-                        label: (context: any) => `${context.label}: ${context.parsed}%`
+                        label: (context: { label?: string, parsed: number }) => `${context.label}: ${context.parsed}%`
                     }
                 }
             }

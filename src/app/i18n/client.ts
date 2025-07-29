@@ -30,7 +30,13 @@ i18next
     preload: runsOnServerSide ? languages : [],
   });
 
-export function useTranslation(lang: string, ns: string, options?: any) {
+interface UseTranslationOptions {
+  bindI18n?: string;
+  bindI18nStore?: string;
+  [key: string]: unknown;
+}
+
+export function useTranslation(lang: string, ns: string, options?: UseTranslationOptions) {
   const [cookies, setCookie] = useCookies([cookieName]);
   const ret = useTranslationOrg(ns, options);
   const { i18n } = ret;
@@ -46,13 +52,13 @@ export function useTranslation(lang: string, ns: string, options?: any) {
   useEffect(() => {
     if (activeLng === i18n.resolvedLanguage) return;
     setActiveLng(i18n.resolvedLanguage);
-  }, [i18n.resolvedLanguage]);
+  }, [activeLng, i18n.resolvedLanguage]);
 
   useEffect(() => {
     if (!lang || i18n.resolvedLanguage === lang || langRef.current === lang) return;
     langRef.current = lang;
     i18n.changeLanguage(lang);
-  }, [lang, i18n.resolvedLanguage]);
+  }, [lang, i18n]);
 
   useEffect(() => {
     if (cookieRef.current === lang) return;

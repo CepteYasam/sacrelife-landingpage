@@ -4,29 +4,23 @@ import { languages, fallbackLng } from './src/app/i18n/settings';
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   
-  // Response oluştur
-  const response = NextResponse.next();
-  
-  // Pathname'i header olarak ekle
-  response.headers.set('x-pathname', pathname);
-  
-  // Eğer pathname zaten bir locale ile başlıyorsa, sadece header'ları ekleyip devam et
+  // Eğer pathname zaten bir locale ile başlıyorsa, devam et
   const pathnameHasLocale = languages.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
   if (pathnameHasLocale) {
-    return response;
+    return NextResponse.next();
   }
 
-  // Locale yoksa varsayılan locale'e yönlendir
-  const locale = fallbackLng;
-  const redirectUrl = new URL(`/${locale}${pathname}`, request.url);
+  // Locale yoksa varsayılan locale'e (Türkçe) yönlendir
+  const locale = fallbackLng; // 'tr'
   
-  const redirectResponse = NextResponse.redirect(redirectUrl);
-  redirectResponse.headers.set('x-pathname', `/${locale}${pathname}`);
+  // Ana sayfa için sondaki eğik çizgiyi kaldır
+  const cleanPathname = pathname === '/' ? '' : pathname;
+  const redirectUrl = new URL(`/${locale}${cleanPathname}`, request.url);
   
-  return redirectResponse;
+  return NextResponse.redirect(redirectUrl);
 }
 
 export const config = {

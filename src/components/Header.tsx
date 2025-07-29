@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { useTranslation } from '../app/i18n/client';
 import { languages } from '../app/i18n/settings';
 

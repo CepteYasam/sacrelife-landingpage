@@ -95,7 +95,6 @@ export default function DarkVeil({
 }: Props) {
   const ref = useRef<HTMLCanvasElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [isInitialized, setIsInitialized] = useState(false);
 
   // Intersection Observer ile görünürlük kontrolü
   useEffect(() => {
@@ -180,7 +179,6 @@ export default function DarkVeil({
     };
 
     loop();
-    setIsInitialized(true);
 
     return () => {
       cancelAnimationFrame(frame);

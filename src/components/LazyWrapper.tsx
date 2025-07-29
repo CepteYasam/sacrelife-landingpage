@@ -3,9 +3,9 @@
 import { Suspense, lazy, ComponentType } from 'react';
 
 interface LazyWrapperProps {
-    component: ComponentType<any>;
+    component: ComponentType<Record<string, unknown>>;
     fallback?: React.ReactNode;
-    props?: any;
+    props?: Record<string, unknown>;
 }
 
 const LazyWrapper = ({ component: Component, fallback, props }: LazyWrapperProps) => {

@@ -16,7 +16,16 @@ const initI18next = async (lang: string, ns: string) => {
   return i18nInstance;
 };
 
-export async function useTranslation(lang: string, ns: string, options = {}) {
+interface UseTranslationOptions {
+  keyPrefix?: string;
+  [key: string]: unknown;
+}
+
+export async function useTranslation(
+  lang: string, 
+  ns: string, 
+  options: UseTranslationOptions = {}
+) {
   const i18nextInstance = await initI18next(lang, ns);
   return {
     t: i18nextInstance.getFixedT(

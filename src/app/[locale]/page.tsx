@@ -1,5 +1,5 @@
 "use client";
-import { useState, memo, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { useParams } from 'next/navigation';
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -7,11 +7,6 @@ import WhyNow from "@/components/WhyNow";
 import Problem from "@/components/Problem";
 import Solution from "@/components/Solution";
 
-import Roadmap from "@/components/Roadmap";
-import Market from "@/components/Market";
-import Competition from "@/components/Competition";
-import Financials from "@/components/Financials";
-import Team from "@/components/Team";
 import Investment from "@/components/Investment";
 import Footer from "@/components/Footer";
 import InvestmentModal from '@/components/InvestmentModal';

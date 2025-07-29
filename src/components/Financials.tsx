@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
 import { useTranslation } from '@/app/i18n/client';
 import {
     Chart as ChartJS,
@@ -12,7 +11,7 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import { Bar, Doughnut } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(
     CategoryScale,
@@ -45,23 +44,6 @@ const Financials = ({ lang }: FinancialsProps) => {
         }]
     };
 
-    // Fon Kullanımı Grafik Verileri
-    const fundUsageData = {
-        labels: [t('financials.investment.fundUsage.product'), t('financials.investment.fundUsage.sales'), t('financials.investment.fundUsage.operations')],
-        datasets: [{
-            label: t('financials.chart.fundUsageLabel'),
-            data: [40, 35, 25],
-            backgroundColor: [
-                'rgba(13, 148, 136, 0.8)',  // primary
-                'rgba(37, 99, 235, 0.8)', // secondary
-                'rgba(124, 58, 237, 0.8)' // purple-600
-            ],
-            borderColor: '#f8fafc',
-            borderWidth: 3,
-            hoverOffset: 8
-        }]
-    };
-
     const financialOptions = {
         responsive: true,
         maintainAspectRatio: false,
@@ -75,7 +57,7 @@ const Financials = ({ lang }: FinancialsProps) => {
             },
             tooltip: {
                 callbacks: {
-                    label: function(context: any) {
+                    label: function(context: { dataset: { label?: string }, parsed: { y: number | null } }) {
                         let label = context.dataset.label || '';
                         if (label) { label += ': '; }
                         if (context.parsed.y !== null) {
@@ -99,39 +81,11 @@ const Financials = ({ lang }: FinancialsProps) => {
                 ticks: { 
                     color: '#64748b',
                     font: { size: 12 },
-                    callback: function(value: any) {
-                        return '$' + (value / 1000000) + 'M';
+                    callback: function(value: string | number) {
+                        return '$' + (Number(value) / 1000000) + 'M';
                     }
                 },
                 grid: { color: '#e5e7eb', borderDash: [2, 4] }
-            }
-        }
-    };
-
-    const fundUsageOptions = {
-        responsive: true,
-        maintainAspectRatio: true,
-        cutout: '70%',
-        plugins: {
-            legend: {
-                position: 'bottom' as const,
-                labels: {
-                    color: '#64748b',
-                    font: { size: 12 },
-                    padding: 20
-                }
-            },
-            tooltip: {
-                callbacks: {
-                    label: function(context: any) {
-                        let label = context.label || '';
-                        if (label) { label += ': '; }
-                        if (context.parsed !== null) {
-                            label += context.parsed + '%';
-                        }
-                        return label;
-                    }
-                }
             }
         }
     };

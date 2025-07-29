@@ -4,9 +4,9 @@ import { ComponentType, lazy, Suspense } from 'react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 interface ScrollLazyLoadProps {
-    component: ComponentType<any>;
+    component: ComponentType<Record<string, unknown>>;
     fallback?: React.ReactNode;
-    props?: any;
+    props?: Record<string, unknown>;
     className?: string;
     threshold?: number;
     rootMargin?: string;
