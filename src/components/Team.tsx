@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from '@/app/i18n/client';
+import Image from 'next/image';
 
 interface TeamProps {
     lang: string;
@@ -55,10 +56,12 @@ const Team = ({ lang }: TeamProps) => {
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {teamMembers.map((member, index) => (
                         <div key={index} className="text-center" data-aos="fade-up" data-aos-delay={index * 100 + 100}>
-                            <img 
+                            <Image 
                                 className={`w-40 h-40 rounded-full mx-auto mb-4 object-cover shadow-lg ring-4 ${member.color}`}
                                 src={member.image}
                                 alt={`${member.role} ${t('team.photoAlt')}`}
+                                width={160}
+                                height={160}
                                 onError={(e) => {
                                     e.currentTarget.onerror = null;
                                     e.currentTarget.src = 'https://placehold.co/200x200/cccccc/FFFFFF?text=' + member.role.split(' ')[2];

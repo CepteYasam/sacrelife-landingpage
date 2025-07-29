@@ -76,7 +76,7 @@ const Solution = ({ lang }: SolutionProps) => {
                         <div id="patient-tab" className={`tab-content ${activeTab === 'patient' ? 'active' : ''}`}>
                             <h3 className="text-2xl font-bold mb-4">
                                 {t('solution.patientValue.title')} <br/>
-                                <span className="gradient-text">&ldquo;{t('solution.patientValue.subtitle')}&rdquo;</span>
+                                <span className="gradient-text">&quot;{t('solution.patientValue.subtitle')}&quot;</span>
                             </h3>
                             <ul className="space-y-3">
                                 <li className="flex items-center">
@@ -96,7 +96,7 @@ const Solution = ({ lang }: SolutionProps) => {
                         <div id="doctor-tab" className={`tab-content ${activeTab === 'doctor' ? 'active' : ''}`}>
                             <h3 className="text-2xl font-bold mb-4">
                                 {t('solution.doctorValue.title')} <br/>
-                                <span className="gradient-text">&ldquo;{t('solution.doctorValue.subtitle')}&rdquo;</span>
+                                <span className="gradient-text">&quot;{t('solution.doctorValue.subtitle')}&quot;</span>
                             </h3>
                             <ul className="space-y-3">
                                 <li className="flex items-center">
