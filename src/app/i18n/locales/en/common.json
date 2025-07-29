@@ -1,0 +1,484 @@
+{
+  "header": {
+    "navigation": {
+      "problem": "Problem",
+      "solution": "Solution", 
+      "features": "Features",
+      "roadmap": "Roadmap",
+      "market": "Market",
+      "competition": "Competition",
+      "financials": "Financials",
+      "team": "Team",
+      "investment": "Invest"
+    },
+    "buttons": {
+      "investNow": "Invest Now",
+      "changeLanguage": "Change Language",
+      "toggleTheme": "Toggle Dark Mode",
+      "openMenu": "Open Menu"
+    },
+    "languages": {
+      "turkish": "Türkçe",
+      "english": "English",
+      "spanish": "Español",
+      "french": "Français",
+      "german": "Deutsch",
+      "italian": "Italiano",
+      "portuguese": "Português",
+      "russian": "Русский",
+      "arabic": "العربية"
+    }
+  },
+  "hero": {
+    "mainTitle": "Turkey's Healthcare Data",
+    "subtitle": "Smart Ecosystem That Makes It Meaningful",
+    "description": "SacreLife is an AI-powered healthcare revolution that transforms scattered health data into meaningful insights and proactive actions for both patients and doctors.",
+    "buttons": {
+      "investmentOpportunity": "Discover Investment Opportunity",
+      "seeFeatures": "See Features"
+    }
+  },
+  "problem": {
+    "sectionTitle": "Problems We Solve",
+    "title": "Healthcare System's 10 Major Fundamental Inefficiencies",
+    "subtitle": "SacreLife eliminates communication, tracking, and management problems at the system's core that both patients and doctors face daily with artificial intelligence.",
+    "problemLabel": "Problem:",
+    "solutionLabel": "SacreLife Solution:",
+    "problems": {
+      "1": {
+        "title": "Communication Gap and Information Confusion",
+        "description": "Patients don't understand medical terms used by doctors; they can't fully grasp the treatment process, leading to trust issues.",
+        "solution": "AI explains every medical term in simple, understandable language. Patients clearly understand what they're experiencing and what they need to do."
+      },
+      "2": {
+        "title": "Late Intervention and Preventable Complications",
+        "description": "Chronic values like blood pressure and glucose aren't regularly monitored by patients, so they're not noticed until reaching dangerous levels.",
+        "solution": "AI continuously analyzes data and uses an 'early warning' system to notify both patients and doctors of risky situations, activating preventive healthcare."
+      },
+      "3": {
+        "title": "Forgetting or Irregular Medication Use",
+        "description": "Patients forget to take medications on time, reducing treatment effectiveness, and doctors are unaware of this situation.",
+        "solution": "Smart reminders are sent, patients mark 'taken' in the app. Doctors can see usage history in real-time to optimize treatment."
+      },
+      "4": {
+        "title": "Waiting Times and Appointment Chaos",
+        "description": "Patients arrive early at hospitals, wait long periods, and spend time inefficiently. This reduces patient satisfaction.",
+        "solution": "AI shows patients the live number of waiting people and estimated waiting time. Patients plan their time efficiently."
+      },
+      "5": {
+        "title": "Lack of Patient-Specific Treatment Information",
+        "description": "Patients can't access sufficient and reliable information about their illness and how to live with it, getting lost in internet misinformation.",
+        "solution": "AI provides verified and personalized educational content (articles, videos, guides) specific to patients' chronic conditions."
+      },
+      "6": {
+        "title": "Pre-Appointment Unpreparedness",
+        "description": "Doctors start meetings without knowing the patient; valuable examination time is spent learning the patient's history, prolonging the process.",
+        "solution": "Patients answer brief questions before appointments, this information is forwarded to doctors. Examinations become more prepared, faster, and efficient."
+      },
+      "7": {
+        "title": "Inability to Monitor Relatives' Health Status",
+        "description": "Health status of elderly or child individuals (medication use, appointments) cannot be effectively monitored remotely by family members.",
+        "solution": "The app allows monitoring of relatives' health processes. Works like a 'digital guardian angel' providing family-wide security."
+      },
+      "8": {
+        "title": "Doctors' Communication Burden and Burnout",
+        "description": "Doctors can't keep up with one-on-one communication with every patient and repeating standard information in busy patient flow.",
+        "solution": "Doctors define standard messages they want AI to communicate to patients; the system automatically conveys this, reducing the doctor's burden."
+      },
+      "9": {
+        "title": "Material and Stock Shortages",
+        "description": "Medications or consumables in clinics can run out unplanned, causing service disruptions.",
+        "solution": "AI monitors stock usage, provides automatic warnings and supply recommendations for depleting products, increasing clinic operational efficiency."
+      },
+      "10": {
+        "title": "Unreachable Feedback",
+        "description": "Patient satisfaction or complaints often don't reach doctors, which is an obstacle to improving service quality.",
+        "solution": "AI measures patient satisfaction after examinations or surgeries, conveys problems to doctors, and initiates follow-up processes when necessary."
+      }
+    }
+  },
+  "solution": {
+    "sectionTitle": "Our Solution",
+    "title": "Platform That Makes e-Nabız Smart",
+    "subtitle": "SacreLife is not a competitor to e-Nabız, but a complementary 'smart layer'. We transform scattered data into life-saving insights.",
+    "tabs": {
+      "patient": "For Patients",
+      "doctor": "For Doctors"
+    },
+    "patientValue": {
+      "title": "Value We Offer to Patients:",
+      "subtitle": "Take Control of Your Health",
+      "benefits": {
+        "1": "Medical Translator: Makes complex reports understandable.",
+        "2": "Proactive Warning System: Detects risks early and warns.",
+        "3": "Smart Medication Assistant: Improves treatment adherence and tracks it."
+      }
+    },
+    "doctorValue": {
+      "title": "Value We Offer to Doctors:",
+      "subtitle": "Increase Efficiency, Focus on Patients",
+      "benefits": {
+        "1": "Smart Appointment Summary: Enter every appointment fully prepared.",
+        "2": "Automatic Patient Tracking: Automate post-examination processes.",
+        "3": "Virtual Assistant: Reduce administrative burden, save time."
+      }
+    },
+    "phoneDemo": {
+      "patientWelcome": "Welcome, Mr. Ahmed",
+      "patientSubtitle": "Your health data has been interpreted for you.",
+      "doctorWelcome": "Welcome, Dr. Elif",
+      "doctorSubtitle": "Smart summary for your next patient is ready.",
+      "nextPatient": "Next Patient: Ahmed Yılmaz",
+      "appointmentTime": "Appointment: 14:30 - General Check-up",
+      "aiAlert": "AI Alert",
+      "creatinineAlert": "Creatinine has increased by 20% over the last 6 months. Kidney function should be checked.",
+      "medicationCompliance": "Medication Compliance",
+      "complianceNote": "75% compliance with blood pressure medication in the last week. Low compliance should be discussed.",
+      "proactiveWarning": "Proactive Warning",
+      "creatinineIncrease": "Your creatinine value has increased by 20% in the last 6 months. Review details.",
+      "medicationReminder": "Medication Reminder",
+      "medicationTime": "Time to take your blood pressure medication in 15 minutes.",
+      "upcomingAppointment": "Upcoming Appointment",
+      "appointmentTomorrow": "You have an appointment with Dr. Elif Yılmaz tomorrow at 14:30."
+    }
+  },
+  "features": {
+    "sectionTitle": "Platform Capabilities",
+    "title": "End-to-End Smart Health Ecosystem",
+    "subtitle": "SacreLife offers a comprehensive, AI-powered solution that facilitates every step of the patient and doctor journey.",
+    "categories": {
+      "patientSafety": "Patient Empowerment and Safety",
+      "doctorEfficiency": "Doctor & Clinic Efficiency",
+      "aiPower": "AI and Data Power",
+      "integrations": "Ecosystem Integrations"
+    },
+    "items": {
+      "1": {
+        "title": "Smart Emergency Response System",
+        "description": "AI monitors critical health data and instantly notifies doctors, emergency services, or relatives with one touch when abnormalities occur."
+      },
+      "2": {
+        "title": "AI-Powered Content and Video Generation",
+        "description": "Doctors can create article and video ideas in seconds with AI, automate their social media posts."
+      },
+      "3": {
+        "title": "Single Point Access to All Health Documents",
+        "description": "Securely access all your lab results, X-rays, and reports from one place. Easily upload your past documents to the system."
+      },
+      "4": {
+        "title": "AI-Powered Two-Stage Analysis",
+        "description": "Doctors get a second opinion by having AI interpret lab results. Details that might be missed are caught, diagnostic reliability increases."
+      },
+      "5": {
+        "title": "Remote E-Prescription Sharing",
+        "description": "Get your e-prescription instantly after online consultation with your doctor, renew your medications without going to the hospital."
+      },
+      "6": {
+        "title": "Smart Medication Tracking and Feedback",
+        "description": "Get reminders at medication times, share your usage pattern with your doctor. Let your treatment response be monitored instantly."
+      },
+      "7": {
+        "title": "AI-Powered Automatic Appointment Scheduling",
+        "description": "Doctors define weekly appointment quotas and time slots, AI automatically fills the calendar most efficiently."
+      },
+      "8": {
+        "title": "AI-Powered Consultation",
+        "description": "Patients can ask AI questions about their health conditions to get preliminary information and guidance. Final decision always rests with the doctor."
+      },
+      "9": {
+        "title": "Doctor-Approved AI Communication",
+        "description": "Doctors define standard information to be communicated to patients in AI. AI conveys this information to patients only with doctor approval, speeding up communication."
+      },
+      "10": {
+        "title": "Post-Surgery and Examination Satisfaction Tracking",
+        "description": "AI calls patients after operations to measure their satisfaction, notes complaints, and immediately conveys feedback to doctors."
+      },
+      "11": {
+        "title": "Verified Doctor Rating and Feedback",
+        "description": "Only patients who have received service can rate doctors. This creates a fair and reliable evaluation system."
+      },
+      "12": {
+        "title": "AI Information for Chronic Patients",
+        "description": "Disease management awareness is increased by providing personalized videos, articles, and guides for chronic diseases like diabetes and hypertension."
+      },
+      "13": {
+        "title": "Personalized AI Health Coaching",
+        "description": "Offers personalized nutrition, exercise, and lifestyle recommendations based on age, medical history, and lifestyle. Motivates you on your healthy living journey."
+      },
+      "14": {
+        "title": "Voice and Video Tracking & Remote Examination",
+        "description": "Conduct secure and high-quality voice or video consultations with your doctor through the platform."
+      },
+      "15": {
+        "title": "Stock Tracking and Consumption Management",
+        "description": "Medications and consumables in the clinic are monitored by AI. When stock decreases, the system automatically provides warnings and supply recommendations."
+      },
+      "16": {
+        "title": "Insurance Compatibility and Payment Information",
+        "description": "Before making an appointment, learn whether the doctor or treatment you choose is covered by your insurance, avoid surprise payments."
+      },
+      "17": {
+        "title": "Psychology Chatbot (Private and Anonymous)",
+        "description": "Anonymous support that's with you 24/7 during stress, anxiety, or depression, understands you, and refers you to specialists when needed."
+      },
+      "18": {
+        "title": "AI-Based Early Warning System",
+        "description": "Detects risky trends in your health data (e.g., last 3 blood pressure readings increasing) and warns you and your doctor before potential complications occur."
+      },
+      "19": {
+        "title": "Smart Assistant with Live Appointment Tracking",
+        "description": "Patient sees live how many people are ahead and estimated waiting time. Waiting room chaos ends."
+      },
+      "20": {
+        "title": "Patient Pre-Information and Guidance",
+        "description": "Patient answers a few simple questions about their complaints before appointment. Doctor starts examination knowing the patient."
+      },
+      "21": {
+        "title": "Emergency Information and Security",
+        "description": "Add critical information like allergies, blood type, organ donation status. In an emergency, this information can save your life."
+      },
+      "22": {
+        "title": "AI-Powered Medical Term Explanations",
+        "description": "Didn't understand a term your doctor used? Touch it, let AI explain it to you in simple and understandable language."
+      },
+      "23": {
+        "title": "Family Health Tracking (Digital Guardian Angel)",
+        "description": "Track your children's or elderly parents' health processes, medication intake, and appointments from one place."
+      }
+    }
+  },
+  "roadmap": {
+    "sectionTitle": "Product Roadmap",
+    "title": "Building the Ecosystem Step by Step",
+    "subtitle": "We will progress by dividing our vision into manageable and commercially meaningful phases.",
+    "phases": {
+      "phase1": {
+        "timeline": "First 12 Months",
+        "title": "Phase 1: CORE",
+        "subtitle": "MVP & Market Validation",
+        "focus": "Focus:",
+        "description": "Establishing the basic information and communication bridge between doctor and patient.",
+        "features": {
+          "1": "e-Nabız Integration",
+          "2": "Smart Appointment Summary",
+          "3": "Tele-Consultation"
+        }
+      },
+      "phase2": {
+        "timeline": "12-24 Months",
+        "title": "Phase 2: PLATFORM",
+        "subtitle": "Ecosystem Expansion",
+        "focus": "Focus:",
+        "description": "Diversifying the revenue model and making the platform indispensable.",
+        "features": {
+          "1": "Clinic Management Panel",
+          "2": "Insurance Integrations",
+          "3": "Family Health Module"
+        }
+      },
+      "phase3": {
+        "timeline": "24+ Months",
+        "title": "Phase 3: INTELLIGENCE",
+        "subtitle": "Deepening and Leadership",
+        "focus": "Focus:",
+        "description": "Setting market standards through data leadership.",
+        "features": {
+          "1": "Personalized AI Health Coaching",
+          "2": "Anonymous Data Analytics",
+          "3": "Wearable Technology Integration"
+        }
+      }
+    }
+  },
+  "competition": {
+    "sectionTitle": "Competitive Advantage",
+    "title": "Why Will We Win?",
+    "subtitle": "The market is crowded, but we're playing a different game. Our competitors are either too general or too niche. We combine the best of both.",
+    "comparisonTable": {
+      "feature": "Feature",
+      "sacrelife": "SacreLife",
+      "enabiz": "e-Nabız",
+      "global": "Global Competitors (Kry, Ada)",
+      "local": "Local Appointment Sites",
+      "features": {
+        "aiInsights": "AI-Powered Personal Insights",
+        "enabizIntegration": "e-Nabız Integration",
+        "clinicTools": "Clinic Management Tools (B2B SaaS)",
+        "endToEnd": "End-to-End Health Management"
+      }
+    },
+    "moats": {
+      "title": "Our Defensible \"Castle Moats\"",
+      "items": {
+        "1": {
+          "title": "Proprietary Data & AI",
+          "description": "Uncopyable AI models trained with Turkey-specific datasets."
+        },
+        "2": {
+          "title": "Network Effects",
+          "description": "With our B2B2C model, every new doctor and patient makes the platform more valuable for everyone."
+        },
+        "3": {
+          "title": "Deep Integration",
+          "description": "Becoming an indispensable tool by integrating with both e-Nabız infrastructure and clinical workflows."
+        }
+      }
+    }
+  },
+  "market": {
+    "sectionTitle": "Strategy",
+    "title": "Market Opportunity",
+    "subtitle": "Significant opportunity in the growing health technology market.",
+    "opportunity": {
+      "title": "Market Opportunity",
+      "items": {
+        "1": {
+          "title": "Market Size: $500B+",
+          "description": "Significant opportunity in the growing health technology market."
+        },
+        "2": {
+          "title": "Annual Growth: 15%",
+          "description": "Dynamic market with 15% annual growth."
+        },
+        "3": {
+          "title": "Technology-Focused",
+          "description": "Competitive advantage with AI and data analytics."
+        }
+      }
+    },
+    "revenueStreams": {
+      "title": "Our Revenue Streams",
+      "items": {
+        "b2bSaas": {
+          "title": "B2B SaaS - SacreLife Pro (Main Revenue)",
+          "description": "Monthly/annual subscription packages for clinics and doctors.",
+          "packages": {
+            "basic": "Basic Package",
+            "pro": "Pro Package (Recommended)",
+            "enterprise": "Enterprise Package"
+          }
+        },
+        "b2b2c": {
+          "title": "B2B2C - Usage-Based (Growth Engine)",
+          "description": "15% commission from tele-consultation sessions conducted on the platform."
+        },
+        "corporate": {
+          "title": "Corporate Health Packages",
+          "description": "Annual licensing for companies wanting to provide modern health benefits to their employees."
+        }
+      }
+    }
+  },
+  "financials": {
+    "sectionTitle": "Financials",
+    "title": "3-Year Growth and Profitability Targets",
+    "subtitle": "Ambitious but achievable goals based on realistic assumptions.",
+    "chart": {
+      "yearlyRevenue": "Annual Recurring Revenue (ARR)",
+      "year1": "Year 1",
+      "year2": "Year 2",
+      "year3": "Year 3",
+      "year1Clinics": "Year 1 - Paid Clinics",
+      "year2Clinics": "Year 2 - Paid Clinics",
+      "year3Clinics": "Year 3 - Paid Clinics",
+      "year3Revenue": "Year 3 - Annual Recurring Revenue (ARR)",
+      "million": "Million",
+      "fundUsageLabel": "Fund Usage Distribution"
+    },
+    "investment": {
+      "sectionTitle": "Investment Request",
+      "title": "Strategic Capital to Turn Vision into Reality",
+      "seedRound": "Seed Investment Round Request",
+      "equity": "Offered Equity",
+      "valuation": "Post-Money Valuation",
+      "description": "This investment will provide 24 months of operational power, taking us to market leadership.",
+      "fundUsage": {
+        "title": "Fund Usage",
+        "distribution": "Distribution",
+        "product": "Product & Technology",
+        "sales": "Sales & Marketing",
+        "operations": "Operations & Reserve"
+      }
+    }
+  },
+  "team": {
+    "sectionTitle": "Team",
+    "title": "The Force That Will Turn This Vision into Reality",
+    "subtitle": "Experienced, passionate, and dedicated founding team in technology, healthcare, and business development.",
+    "photoAlt": "Photo",
+    "members": {
+      "ceo": {
+        "name": "Your Name Surname",
+        "role": "Founder & CEO",
+        "description": "10+ years experience in health technologies and strategic management. Successfully exited previous startup."
+      },
+      "cto": {
+        "name": "Name Surname",
+        "role": "Founder & CTO",
+        "description": "Expert in AI and big data architectures. Held leadership roles at leading technology companies."
+      },
+      "cmo": {
+        "name": "Name Surname",
+        "role": "Founder & CMO",
+        "description": "Proven success in digital marketing and B2B SaaS growth strategies. Market entry specialist."
+      }
+    }
+  },
+  "whyNow": {
+    "sectionTitle": "Why Now?",
+    "title": "Right Time, Right Market: Turkey's Inevitable Health Revolution",
+    "subtitle": "Three major and irreversible waves are happening simultaneously in the health sector. SacreLife was born at the intersection of these mega trends.",
+    "trends": {
+      "dataExplosion": {
+        "title": "Data Explosion",
+        "description": "With e-Nabız, data of 78+ million citizens has been digitized. This is a huge data treasure waiting to be processed."
+      },
+      "aiMaturity": {
+        "title": "AI Maturity",
+        "description": "AI is now a proven analytical power that can produce meaningful results from medical data."
+      },
+      "behavioralChange": {
+        "title": "Behavioral Change",
+        "description": "Post-pandemic, both patients and doctors have adopted digital health tools and this habit has become permanent."
+      }
+    }
+  },
+  "investment": {
+    "sectionTitle": "Investment Request",
+    "title": "Join the Future of Healthcare",
+    "subtitle": "Be Part of the Health Revolution",
+    "description": "Partner not just with an app, but with a scalable and profitable ecosystem that touches both human lives and capital.",
+    "cta": "Contact Us",
+    "finalCta": "Invest in the Future of Healthcare Infrastructure."
+  },
+  "footer": {
+    "copyright": "2025 SacreLife Inc. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "contact": {
+    "title": "Investor Relations",
+    "description": "Contact us for detailed information and meeting requests.",
+    "name": "Your Name Surname",
+    "email": "Your Email Address",
+    "message": "Your Message",
+    "send": "Send",
+    "success": "Your message has been sent successfully. We will contact you as soon as possible.",
+    "close": "Close"
+  },
+  "investmentModal": {
+    "title": "Digital Health: A Market Ready to Explode",
+    "subtitle": "The numbers tell why you should invest now.",
+    "close": "Close", 
+    "globalMarket": "Global Digital Health Market",
+    "aiMarket": "AI in Healthcare Market",
+    "growthTitle": "Why Is This Growth Inevitable?",
+    "chronicDiseases": "Rising Chronic Diseases: The aging population worldwide increases demand for solutions requiring continuous monitoring and proactive management.",
+    "consumerDemand": "Consumer Demand: Patients now want to take a more active role in their health journeys, access their data, and demand personalized services.",
+    "costPressure": "Cost Pressure: Health systems must reduce costs by increasing efficiency with AI and automation and promoting preventive care.",
+    "readyQuestion": "Are you ready to be part of this revolution?",
+    "contactButton": "Let's Discuss in Detail",
+    "expectedValue2034": "Expected value to be reached by 2034 (21.2% CAGR).",
+    "expectedGrowthCAGR": "Expected annual compound growth rate (CAGR) until 2032."
+  }
+} 

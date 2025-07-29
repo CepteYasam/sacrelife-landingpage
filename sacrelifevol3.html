@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <!-- =================================================================== -->
+    <!-- META BİLGİLERİ VE TEMEL AYARLAR -->
+    <!-- Sayfanın arama motorları ve tarayıcılar tarafından nasıl yorumlanacağını belirler. -->
+    <!-- =================================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SacreLife, yapay zeka destekli sağlık ekosistemi. Sağlık verilerinizi anlamlı içgörülere dönüştürerek proaktif bir sağlık yolculuğu sunuyoruz. Geleceğin sağlığına yatırım yapın.">
+    <meta name="keywords" content="Sağlık Teknolojisi, Yapay Zeka, Dijital Sağlık, Tele-sağlık, e-Nabız, Yatırım, Startup, SacreLife">
+    <meta name="author" content="SacreLife Inc.">
+    <title>SacreLife | Sağlığın Geleceğine Yatırım Yapın</title>
+    
+    <!-- Favicon - Marka Kimliği -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚕️</text></svg>">
+
+    <!-- =================================================================== -->
+    <!-- HARİCİ KÜTÜPHANELER (CDN) -->
+    <!-- Sayfanın işlevselliği ve görünümü için gerekli olan harici script ve stil dosyaları. -->
+    <!-- =================================================================== -->
+    <!-- Tailwind CSS - Modern ve Hızlı Tasarım için -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter - Okunabilirlik ve Profesyonel Görünüm için -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Animate On Scroll (AOS) Library - Kaydırma Animasyonları için -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Chart.js - Veri Görselleştirme ve Grafikler için -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+    <!-- =================================================================== -->
+    <!-- ÖZEL STİLLER VE TAILWIND YAPILANDIRMASI -->
+    <!-- Projeye özgü stil tanımlamaları ve Tailwind'in özelleştirilmesi. -->
+    <!-- =================================================================== -->
+    <style type="text/tailwindcss">
+        /* Temel gövde stili ve font yumuşatma */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Özel gradient metin efekti */
+        .gradient-text {
+            @apply bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent;
+        }
+        .dark .gradient-text {
+            @apply from-teal-300 to-blue-400;
+        }
+
+        /* Özel glassmorphism kart efekti */
+        .glass-card {
+            @apply bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg transition-all duration-300;
+        }
+        .glass-card:hover {
+            @apply shadow-xl transform -translate-y-1;
+        }
+
+        /* Modern görünümlü özel kaydırma çubuğu */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            /* HATA DÜZELTMESİ: @apply yerine doğrudan hex kodları kullanıldı. */
+            background-color: #f8fafc; /* light-bg */
+        }
+        .dark ::-webkit-scrollbar-track {
+            background-color: #1e293b; /* dark:bg-slate-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1; /* slate-300 */
+            border-radius: 10px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #475569; /* dark:bg-slate-600 */
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #94a3b8; /* slate-400 */
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background-color: #64748b; /* dark:bg-slate-500 */
+        }
+
+        /* Timeline için özel stiller */
+        .timeline-item::before {
+            content: '';
+            @apply absolute left-[-21px] top-1 w-4 h-4 rounded-full border-4;
+            /* HATA DÜZELTMESİ: Renkler JS ile dinamik olarak atanacak veya doğrudan uygulanacak. */
+        }
+        .timeline-item-primary::before {
+            @apply bg-primary border-light-bg dark:border-dark-bg;
+        }
+        .timeline-item-secondary::before {
+            @apply bg-secondary border-light-bg dark:border-dark-bg;
+        }
+        .timeline-item-purple::before {
+            @apply bg-purple-500 border-light-bg dark:border-dark-bg;
+        }
+
+        /* Rekabet matrisi tablo stilleri */
+        .comparison-table th, .comparison-table td {
+            @apply p-4 text-sm text-left border-b border-gray-200 dark:border-gray-700;
+        }
+        .comparison-table th {
+            @apply font-semibold bg-gray-50 dark:bg-gray-800/50;
+        }
+        .comparison-table .check-icon {
+            @apply text-green-500;
+        }
+        .comparison-table .cross-icon {
+            @apply text-red-500;
+        }
+        .comparison-table .partial-icon {
+            @apply text-yellow-500;
+        }
+
+        /* Sekme (Tab) stilleri */
+        .tab-button.active {
+            @apply border-primary text-primary dark:border-primary-light dark:text-primary-light;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* FAQ Akordiyon Stilleri */
+        .faq-question summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+    
+    <!-- Tailwind JIT Yapılandırması -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // 'media' veya 'class'
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#14b8a6', // teal-500
+                            DEFAULT: '#0d9488', // teal-600
+                            dark: '#0f766e',  // teal-700
+                        },
+                        secondary: {
+                            light: '#3b82f6', // blue-500
+                            DEFAULT: '#2563eb', // blue-600
+                            dark: '#1d4ed8',  // blue-700
+                        },
+                        // HATA DÜZELTMESİ: Bu özel renkler doğrudan HTML'de kullanılacak.
+                        'light-bg': '#f8fafc', // slate-50
+                        'dark-bg': '#020617', // slate-950
+                        'light-text': '#0f172a', // slate-900
+                        'dark-text': '#f1f5f9', // slate-100
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'background-pan': 'backgroundPan 10s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        backgroundPan: {
+                            // HATA DÜZELTMESİ: 'background-position' doğru yazıldı.
+                            '0%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                            '100%': { 'background-position': '0% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<!-- HATA DÜZELTMESİ: Temel sınıflar doğrudan <body> etiketine eklendi. -->
+<body class="bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text transition-colors duration-300">
+
+    <!-- =================================================================== -->
+    <!-- HEADER VE NAVİGASYON -->
+    <!-- Sayfanın en üstünde yer alan ve gezinmeyi sağlayan sabit bölüm. -->
+    <!-- =================================================================== -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center space-x-3">
+                     <svg class="w-10 h-10 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0V9zM10.5 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H11.25a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-2xl font-bold gradient-text">SacreLife</span>
+                </a>
+
+                <!-- Navigasyon Menüsü (Masaüstü) -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#problem" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors font-medium">Sorun</a>
+                    <a href="#solution" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors font-medium">Çözüm</a>
+                    <a href="#features" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors font-medium">Özellikler</a>
+                    <a href="#roadmap" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors font-medium">Yol Haritası</a>
+                    <a href="#market" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors font-medium">Pazar</a>
+                    <a href="#competition" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors font-medium">Rekabet</a>
+                    <a href="#financials" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors font-medium">Finansallar</a>
+                    <a href="#team" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors font-medium">Ekip</a>
+                </nav>
+
+                <!-- Eylemler ve Mobil Menü Butonu -->
+                <div class="flex items-center space-x-4">
+                    <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" aria-label="Karanlık Modu Değiştir">
+                        <svg id="sun-icon" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <svg id="moon-icon" class="w-6 h-6 text-gray-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <button onclick="openInvestmentModal()" class="hidden sm:inline-block bg-gradient-to-r from-primary to-secondary text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
+                        Yatırım Yap
+                    </button>
+                    <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700" aria-label="Menüyü Aç">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobil Menü -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/90 dark:bg-dark-bg/90 backdrop-blur-lg">
+            <nav class="flex flex-col items-center space-y-4 py-4">
+                <a href="#problem" class="mobile-nav-link text-lg font-medium py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Sorun</a>
+                <a href="#solution" class="mobile-nav-link text-lg font-medium py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Çözüm</a>
+                <a href="#features" class="mobile-nav-link text-lg font-medium py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Özellikler</a>
+                <a href="#roadmap" class="mobile-nav-link text-lg font-medium py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Yol Haritası</a>
+                <a href="#market" class="mobile-nav-link text-lg font-medium py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Pazar</a>
+                <a href="#competition" class="mobile-nav-link text-lg font-medium py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Rekabet</a>
+                <a href="#financials" class="mobile-nav-link text-lg font-medium py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Finansallar</a>
+                <a href="#team" class="mobile-nav-link text-lg font-medium py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Ekip</a>
+                <a href="#investment" class="mobile-nav-link text-lg font-medium py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">Yatırım Yap</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- =================================================================== -->
+        <!-- HERO BÖLÜMÜ -->
+        <!-- Sayfanın açılışında kullanıcıyı karşılayan ilk ve en etkili bölüm. -->
+        <!-- =================================================================== -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+            <!-- Arka Plan Efektleri -->
+            <div class="absolute inset-0 bg-grid-gray-200/50 dark:bg-grid-gray-700/30 [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)]"></div>
+            <div class="absolute inset-0 bg-light-bg dark:bg-dark-bg [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+            
+            <div class="container mx-auto px-6 text-center z-10">
+                <div data-aos="fade-up">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
+                        <span class="block">Türkiye'nin Sağlık Verisini</span>
+                        <span class="block gradient-text mt-2 animate-background-pan bg-[length:200%_auto]">Anlamlı Kılan Akıllı Ekosistem</span>
+                    </h1>
+                    <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10">
+                        SacreLife, dağınık sağlık verilerini hem hastalar hem de doktorlar için anlamlı içgörülere ve proaktif eylemlere dönüştüren, yapay zeka destekli bir sağlık devrimidir.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button onclick="openInvestmentModal()" class="w-full sm:w-auto bg-gradient-to-r from-primary to-secondary text-white font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all text-lg">
+                            Yatırım Fırsatını Keşfedin
+                        </button>
+                        <a href="#features" class="w-full sm:w-auto bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all border border-gray-200 dark:border-gray-700 text-lg">
+                            Özellikleri Gör
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- NEDEN ŞİMDİ? BÖLÜMÜ -->
+        <!-- Pazarın bu çözüm için neden şu anda hazır olduğunu açıklayan bölüm. -->
+        <!-- =================================================================== -->
+        <section id="why-now" class="py-20 sm:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-base font-semibold text-primary tracking-wider uppercase">Neden Şimdi?</h2>
+                    <p class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight">
+                        Doğru Zamanda, Doğru Pazarda: Türkiye'nin Kaçınılmaz Sağlık Devrimi
+                    </p>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+                        Sağlık sektöründe üç büyük ve geri döndürülemez dalga aynı anda yaşanıyor. SacreLife, bu mega trendlerin kesişim noktasında doğdu.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <!-- Trend 1: Veri Patlaması -->
+                    <div class="p-8 glass-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mx-auto mb-6">
+                            <svg class="w-8 h-8 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125v-1.5c0-.621.504-1.125 1.125-1.125H20.625c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h17.25m-17.25 0a1.125 1.125 0 00-1.125-1.125v-1.5c0-.621.504-1.125 1.125-1.125H20.625c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-16.5-9.75h15.75m-15.75 0a1.125 1.125 0 01-1.125-1.125v-1.5c0-.621.504-1.125 1.125-1.125h15.75c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-15.75 0h15.75m-15.75 0a1.125 1.125 0 00-1.125-1.125v-1.5c0-.621.504-1.125 1.125-1.125h15.75c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Veri Patlaması</h3>
+                        <p class="text-gray-600 dark:text-gray-400">e-Nabız ile <span class="font-bold text-primary dark:text-primary-light counter" data-target="78">0</span> Milyon+ vatandaşın verisi dijitalleşti. Bu, işlenmeyi bekleyen dev bir veri hazinesi.</p>
+                    </div>
+
+                    <!-- Trend 2: Yapay Zeka Olgunluğu -->
+                    <div class="p-8 glass-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mx-auto mb-6">
+                            <svg class="w-8 h-8 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 21v-1.5M12 3v1.5m0 15v1.5m3.75-18v1.5m0 15v1.5m-7.5-15v1.5m0 15v1.5M12 6.75h.008v.008H12V6.75zM12 17.25h.008v.008H12v-.008zM9.75 9.75h.008v.008H9.75v-.008zM9.75 14.25h.008v.008H9.75v-.008zM14.25 9.75h.008v.008h-.008v-.008zM14.25 14.25h.008v.008h-.008v-.008z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Yapay Zeka Olgunluğu</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Yapay zeka artık tıbbi verilerden anlamlı sonuçlar üretebilen, kanıtlanmış bir analitik güç.</p>
+                    </div>
+
+                    <!-- Trend 3: Davranışsal Değişim -->
+                    <div class="p-8 glass-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mx-auto mb-6">
+                            <svg class="w-8 h-8 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6.75h-7.5" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9.75h-7.5" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Davranışsal Değişim</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Pandemi sonrası hem hastalar hem de doktorlar dijital sağlık araçlarını benimsedi ve bu alışkanlık kalıcı oldu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- PROBLEM BÖLÜMÜ (YENİLENDİ) -->
+        <!-- Çözülen "acı noktayı" ve pazar ihtiyacını tanımlayan bölüm. -->
+        <!-- =================================================================== -->
+        <section id="problem" class="py-20 sm:py-32 bg-white dark:bg-dark-bg/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-base font-semibold text-secondary tracking-wider uppercase">Çözdüğümüz Sorunlar</h2>
+                    <p class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight">
+                        Sağlık Sisteminin Kökten Gelen 10 Büyük Verimsizliği
+                    </p>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+                        SacreLife, hem hastaların hem de doktorların günlük olarak karşılaştığı, sistemin temelindeki iletişim, takip ve yönetim sorunlarını yapay zeka ile ortadan kaldırır.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Problem 1 -->
+                    <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-700" data-aos="fade-up">
+                        <h4 class="font-bold text-lg mb-2 text-red-600 dark:text-red-400">1. Sorun: İletişim Eksikliği ve Bilgi Karmaşası</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Hasta, doktorun kullandığı tıbbi terimleri anlamıyor; tedavi sürecini tam olarak kavrayamıyor ve bu da güven eksikliğine yol açıyor.</p>
+                        <div class="p-3 rounded-lg bg-green-50 dark:bg-green-900/20">
+                            <p class="font-semibold text-green-800 dark:text-green-300">SacreLife Çözümü:</p>
+                            <p class="text-sm text-green-700 dark:text-green-400">Yapay zeka, her tıbbi terimi sade ve anlaşılır bir dille açıklar. Hasta ne yaşadığını ve ne yapması gerektiğini net olarak anlar.</p>
+                        </div>
+                    </div>
+                    <!-- Problem 2 -->
+                    <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-700" data-aos="fade-up">
+                        <h4 class="font-bold text-lg mb-2 text-red-600 dark:text-red-400">2. Sorun: Geç Müdahale ve Önlenebilir Komplikasyonlar</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Tansiyon, şeker gibi kronik değerler, hasta tarafından düzenli takip edilmediği için riskli seviyeye ulaşana kadar fark edilmiyor.</p>
+                        <div class="p-3 rounded-lg bg-green-50 dark:bg-green-900/20">
+                            <p class="font-semibold text-green-800 dark:text-green-300">SacreLife Çözümü:</p>
+                            <p class="text-sm text-green-700 dark:text-green-400">Yapay zeka, verileri sürekli analiz ederek "erken uyarı" sistemiyle riskli durumları hem hastaya hem doktora bildirir, önleyici sağlık hizmeti devreye girer.</p>
+                        </div>
+                    </div>
+                    <!-- Problem 3 -->
+                    <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-700" data-aos="fade-up">
+                        <h4 class="font-bold text-lg mb-2 text-red-600 dark:text-red-400">3. Sorun: İlaçların Unutulması veya Düzensiz Kullanımı</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Hastalar ilaçlarını zamanında almayı unutuyor, bu da tedavinin etkinliğini düşürüyor ve doktor bu durumdan haberdar olmuyor.</p>
+                        <div class="p-3 rounded-lg bg-green-50 dark:bg-green-900/20">
+                            <p class="font-semibold text-green-800 dark:text-green-300">SacreLife Çözümü:</p>
+                            <p class="text-sm text-green-700 dark:text-green-400">Akıllı hatırlatmalar gönderilir, hasta uygulamaya "aldım" olarak işaretler. Doktor, kullanım geçmişini anlık olarak görerek tedaviyi optimize edebilir.</p>
+                        </div>
+                    </div>
+                    <!-- Problem 4 -->
+                    <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-700" data-aos="fade-up">
+                        <h4 class="font-bold text-lg mb-2 text-red-600 dark:text-red-400">4. Sorun: Bekleme Süreleri ve Randevu Kaosu</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Hastalar hastaneye erken gidiyor, uzun süre bekliyor ve zamanları verimsiz geçiyor. Bu durum hasta memnuniyetini düşürüyor.</p>
+                        <div class="p-3 rounded-lg bg-green-50 dark:bg-green-900/20">
+                            <p class="font-semibold text-green-800 dark:text-green-300">SacreLife Çözümü:</p>
+                            <p class="text-sm text-green-700 dark:text-green-400">Yapay zeka, hastaya canlı olarak bekleyen kişi sayısını ve tahmini bekleme süresini gösterir. Hasta zamanını verimli planlar.</p>
+                        </div>
+                    </div>
+                    <!-- Problem 5 -->
+                    <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-700" data-aos="fade-up">
+                        <h4 class="font-bold text-lg mb-2 text-red-600 dark:text-red-400">5. Sorun: Hastaya Uygun Tedavi Bilgisinin Eksikliği</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Hasta, hastalığı ve nasıl yaşaması gerektiği hakkında yeterli ve güvenilir bilgiye ulaşamıyor, internetteki bilgi kirliliğinde kayboluyor.</p>
+                        <div class="p-3 rounded-lg bg-green-50 dark:bg-green-900/20">
+                            <p class="font-semibold text-green-800 dark:text-green-300">SacreLife Çözümü:</p>
+                            <p class="text-sm text-green-700 dark:text-green-400">Yapay zeka, hastanın kronik rahatsızlıklarına özel, doğrulanmış ve kişiselleştirilmiş bilgilendirici içerikler (makale, video, rehber) sunar.</p>
+                        </div>
+                    </div>
+                    <!-- Problem 6 -->
+                    <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-700" data-aos="fade-up">
+                        <h4 class="font-bold text-lg mb-2 text-red-600 dark:text-red-400">6. Sorun: Randevu Öncesi Hazırlıksızlık</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Doktor, hastayı hiç tanımadan görüşmeye başlıyor; değerli muayene süresi hastanın geçmişini öğrenmekle geçiyor, süreç uzuyor.</p>
+                        <div class="p-3 rounded-lg bg-green-50 dark:bg-green-900/20">
+                            <p class="font-semibold text-green-800 dark:text-green-300">SacreLife Çözümü:</p>
+                            <p class="text-sm text-green-700 dark:text-green-400">Hasta randevudan önce kısa sorulara yanıt verir, bu bilgiler doktora iletilir. Muayene daha hazırlıklı, hızlı ve verimli olur.</p>
+                        </div>
+                    </div>
+                    <!-- Problem 7 -->
+                    <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-700" data-aos="fade-up">
+                        <h4 class="font-bold text-lg mb-2 text-red-600 dark:text-red-400">7. Sorun: Yakınların Sağlık Durumunu Takip Edememe</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Yaşlı veya çocuk bireylerin sağlık durumu (ilaç kullanımı, randevular) aile bireyleri tarafından uzaktan ve etkin bir şekilde izlenemiyor.</p>
+                        <div class="p-3 rounded-lg bg-green-50 dark:bg-green-900/20">
+                            <p class="font-semibold text-green-800 dark:text-green-300">SacreLife Çözümü:</p>
+                            <p class="text-sm text-green-700 dark:text-green-400">Uygulama, hasta yakınlarının sağlık süreçlerini izlemeye olanak tanır. "Dijital koruyucu melek" gibi çalışarak aile boyu güvence sağlar.</p>
+                        </div>
+                    </div>
+                    <!-- Problem 8 -->
+                    <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-700" data-aos="fade-up">
+                        <h4 class="font-bold text-lg mb-2 text-red-600 dark:text-red-400">8. Sorun: Doktorların İletişim Yükü ve Tükenmişliği</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Doktorlar, yoğun hasta temposunda her hastayla birebir iletişim kurmaya ve standart bilgileri tekrarlamaya yetişemiyor.</p>
+                        <div class="p-3 rounded-lg bg-green-50 dark:bg-green-900/20">
+                            <p class="font-semibold text-green-800 dark:text-green-300">SacreLife Çözümü:</p>
+                            <p class="text-sm text-green-700 dark:text-green-400">Doktor, yapay zekaya hastaya iletilmesini istediği standart mesajları tanımlar; sistem bunu otomatik olarak ileterek doktorun yükünü azaltır.</p>
+                        </div>
+                    </div>
+                    <!-- Problem 9 -->
+                    <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-700" data-aos="fade-up">
+                        <h4 class="font-bold text-lg mb-2 text-red-600 dark:text-red-400">9. Sorun: Malzeme ve Stok Yetersizlikleri</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Kliniklerde ilaçlar veya sarf malzemeleri plansızca tükenebiliyor, bu da hizmetin aksamasına neden olabiliyor.</p>
+                        <div class="p-3 rounded-lg bg-green-50 dark:bg-green-900/20">
+                            <p class="font-semibold text-green-800 dark:text-green-300">SacreLife Çözümü:</p>
+                            <p class="text-sm text-green-700 dark:text-green-400">Yapay zeka stok kullanımını izler, azalan ürünler için otomatik uyarı ve tedarik önerisi sunarak kliniğin operasyonel verimliliğini artırır.</p>
+                        </div>
+                    </div>
+                    <!-- Problem 10 -->
+                    <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-700" data-aos="fade-up">
+                        <h4 class="font-bold text-lg mb-2 text-red-600 dark:text-red-400">10. Sorun: Geri Bildirimin Ulaşılamaması</h4>
+                        <p class="text-gray-600 dark:text-gray-400 mb-3">Hasta memnuniyeti veya şikayetleri çoğu zaman doktora ulaşmaz, bu da hizmet kalitesinin artırılmasının önünde bir engeldir.</p>
+                        <div class="p-3 rounded-lg bg-green-50 dark:bg-green-900/20">
+                            <p class="font-semibold text-green-800 dark:text-green-300">SacreLife Çözümü:</p>
+                            <p class="text-sm text-green-700 dark:text-green-400">Yapay zeka, muayene veya ameliyat sonrası hasta memnuniyetini ölçer, sorunları doktora iletir ve gerekirse geri dönüş sürecini başlatır.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- ÇÖZÜM BÖLÜMÜ (YENİLENDİ VE GÜZELLEŞTİRİLDİ) -->
+        <!-- Ürünün/hizmetin probleme nasıl bir çözüm getirdiğini anlatan bölüm. -->
+        <!-- =================================================================== -->
+        <section id="solution" class="py-20 sm:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-base font-semibold text-primary tracking-wider uppercase">Çözümümüz</h2>
+                    <p class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight">
+                        e-Nabız'ı Akıllandıran Platform
+                    </p>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+                        SacreLife, e-Nabız'a rakip değil, onu tamamlayan bir "akıllı katman"dır. Dağınık verileri, hayat kurtaran içgörülere dönüştürürüz.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-10 items-center">
+                    <!-- Value Proposition -->
+                    <div class="space-y-8" data-aos="fade-right">
+                        <!-- Tabs for switching between Patient and Doctor views -->
+                        <div class="border-b border-gray-200 dark:border-gray-700">
+                            <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                                <button class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg active" data-tab="patient">
+                                    Hasta İçin
+                                </button>
+                                <button class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-lg" data-tab="doctor">
+                                    Doktor İçin
+                                </button>
+                            </nav>
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div id="patient-tab" class="tab-content active">
+                             <h3 class="text-2xl font-bold mb-4">Hastaya Sunduğumuz Değer: <br><span class="gradient-text">"Sağlığının Kontrolünü Eline Al"</span></h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 mr-3 font-bold">✓</span>
+                                    <strong>Tıbbi Çevirmen:</strong> Karmaşık raporları anlaşılır hale getirir.
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 mr-3 font-bold">✓</span>
+                                    <strong>Proaktif Uyarı Sistemi:</strong> Riskleri önceden tespit eder ve uyarır.
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 mr-3 font-bold">✓</span>
+                                    <strong>Akıllı İlaç Asistanı:</strong> Tedaviye uyumu artırır ve takip eder.
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="doctor-tab" class="tab-content">
+                             <h3 class="text-2xl font-bold mb-4">Doktora Sunduğumuz Değer: <br><span class="gradient-text">"Verimliliği Artırın, Hastaya Odaklanın"</span></h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 mr-3 font-bold">✓</span>
+                                    <strong>Akıllı Randevu Özeti:</strong> Her randevuya tam hazırlıklı girin.
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 mr-3 font-bold">✓</span>
+                                    <strong>Otomatik Hasta Takibi:</strong> Muayene sonrası süreçleri otomatikleştirin.
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 mr-3 font-bold">✓</span>
+                                    <strong>Sanal Asistan:</strong> İdari yükü azaltın, zamandan kazanın.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Visual Representation (e.g., a phone mockup) -->
+                    <div class="relative h-full min-h-[640px]" data-aos="zoom-in-up">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-full max-w-sm p-2 rounded-[40px] bg-gray-800 shadow-2xl">
+                                <div class="w-full h-[600px] bg-dark-bg rounded-[32px] overflow-hidden relative">
+                                    <!-- Phone Screen Content -->
+                                    <div id="phone-screen-content" class="p-4 text-white transition-opacity duration-500">
+                                        <!-- Patient View (Default) -->
+                                        <div id="phone-patient-view">
+                                            <div class="flex justify-between items-center mb-4">
+                                                <span class="text-sm">9:41</span>
+                                                <div class="w-16 h-1 bg-white rounded-full"></div>
+                                                <div class="flex space-x-1">
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.5 12a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm3 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm6 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"></path></svg>
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 011.414-1.414L10 14.586l6.293-6.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                            </div>
+                                            <div class="text-center mb-6">
+                                                <h2 class="text-xl font-bold gradient-text">Hoş Geldiniz, Ahmet Bey</h2>
+                                                <p class="text-sm text-gray-400">Sağlık verileriniz sizin için anlamlandırıldı.</p>
+                                            </div>
+                                            <div class="space-y-3 animate-pulse-slow">
+                                                <div class="p-4 rounded-xl bg-blue-500/20 border border-blue-400">
+                                                    <h4 class="font-bold text-blue-300">Proaktif Uyarı</h4>
+                                                    <p class="text-sm">Kreatinin değeriniz son 6 ayda %20 arttı. Detayları inceleyin.</p>
+                                                </div>
+                                                <div class="p-4 rounded-xl bg-teal-500/20 border border-teal-400">
+                                                    <h4 class="font-bold text-teal-300">İlaç Hatırlatma</h4>
+                                                    <p class="text-sm">15 dakika sonra tansiyon ilacınızı alma zamanı.</p>
+                                                </div>
+                                                <div class="p-4 rounded-xl bg-purple-500/20 border border-purple-400">
+                                                    <h4 class="font-bold text-purple-300">Yaklaşan Randevu</h4>
+                                                    <p class="text-sm">Yarın 14:30'da Dr. Elif Yılmaz ile randevunuz var.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Doctor View (Hidden by default) -->
+                                        <div id="phone-doctor-view" class="hidden">
+                                            <div class="flex justify-between items-center mb-4">
+                                                <span class="text-sm">9:41</span>
+                                                <div class="w-16 h-1 bg-white rounded-full"></div>
+                                                <div class="flex space-x-1">
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.5 12a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm3 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm6 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"></path></svg>
+                                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7a1 1 0 011.414-1.414L10 14.586l6.293-6.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                            </div>
+                                            <div class="text-center mb-6">
+                                                <h2 class="text-xl font-bold gradient-text">Hoş Geldiniz, Dr. Elif Hanım</h2>
+                                                <p class="text-sm text-gray-400">Sıradaki hastanız için akıllı özet hazır.</p>
+                                            </div>
+                                            <div class="p-4 rounded-xl bg-gray-700/50 border border-gray-600">
+                                                <h4 class="font-bold text-white">Sıradaki Hasta: Ahmet Yılmaz</h4>
+                                                <p class="text-sm text-gray-400">Randevu: 14:30 - Genel Kontrol</p>
+                                                <div class="mt-4 space-y-2">
+                                                    <div class="p-3 rounded-lg bg-red-500/20">
+                                                        <h5 class="text-sm font-semibold text-red-300">AI Uyarısı</h5>
+                                                        <p class="text-xs">Son 6 ayda Kreatinin %20 artış trendinde. Böbrek fonksiyonları kontrol edilmeli.</p>
+                                                    </div>
+                                                     <div class="p-3 rounded-lg bg-yellow-500/20">
+                                                        <h5 class="text-sm font-semibold text-yellow-300">İlaç Uyumu</h5>
+                                                        <p class="text-xs">Tansiyon ilacı kullanımında son 1 haftada %75 uyum. Düşük uyum hakkında görüşülmeli.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- YENİ BÖLÜM: DETAYLI ÖZELLİKLER -->
+        <!-- Kullanıcının isteği üzerine eklenen, 23 özelliğin tamamını sergileyen bölüm. -->
+        <!-- =================================================================== -->
+        <section id="features" class="py-20 sm:py-32 bg-white dark:bg-dark-bg/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-base font-semibold text-secondary tracking-wider uppercase">Platform Yetenekleri</h2>
+                    <p class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight">
+                        Uçtan Uca Akıllı Sağlık Ekosistemi
+                    </p>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+                        SacreLife, hasta ve doktor yolculuğunun her adımını kolaylaştıran, yapay zeka destekli, bütünsel bir çözüm sunar.
+                    </p>
+                </div>
+
+                <!-- Kategori 1: Hasta Güçlendirme ve Güvenlik -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-center mb-10" data-aos="fade-up">Hasta Güçlendirme ve Güvenlik</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Feature 1 -->
+                        <div class="p-6 glass-card" data-aos="fade-up">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-red-100 dark:bg-red-900/50 mb-4">
+                                <svg class="w-6 h-6 text-red-500 dark:text-red-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">1. Akıllı Acil Müdahale Sistemi</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Yapay zeka, kritik sağlık verilerini izler ve anormallik durumunda tek tuşla doktor, acil servis veya yakınlara anında bildirim gönderir.</p>
+                        </div>
+                        <!-- Feature 3 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100 dark:bg-blue-900/50 mb-4">
+                                <svg class="w-6 h-6 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">3. Tüm Sağlık Belgelerine Tek Noktadan Erişim</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Tahlil, röntgen ve tüm raporlarınıza tek bir yerden güvenle erişin. Geçmiş belgelerinizi de sisteme kolayca yükleyin.</p>
+                        </div>
+                        <!-- Feature 5 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-100 dark:bg-green-900/50 mb-4">
+                                <svg class="w-6 h-6 text-green-500 dark:text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">5. Uzaktan E-Reçete Paylaşımı</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Doktorunuzla yapacağınız online görüşme sonrası e-reçetenizi anında alın, ilaçlarınızı hastaneye gitmeden yenileyin.</p>
+                        </div>
+                        <!-- Feature 6 -->
+                        <div class="p-6 glass-card" data-aos="fade-up">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-yellow-100 dark:bg-yellow-900/50 mb-4">
+                                <svg class="w-6 h-6 text-yellow-500 dark:text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">6. Akıllı İlaç Takibi ve Geri Bildirim</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">İlaç saatlerinizde hatırlatmalar alın, kullanım düzeninizi doktorunuzla paylaşın. Tedaviye yanıtınız anlık olarak izlensin.</p>
+                        </div>
+                        <!-- Feature 17 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-purple-100 dark:bg-purple-900/50 mb-4">
+                                <svg class="w-6 h-6 text-purple-500 dark:text-purple-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.76 9.76 0 01-2.542-.358 1.253 1.253 0 01-.885-.442A2.25 2.25 0 0015 12c0-1.243-.988-2.25-2.22-2.25s-2.22 1.007-2.22 2.25c0 .592.232 1.121.608 1.519l.354.416c.329.387.755.635 1.22.635h1.125c.604 0 1.13-.328 1.414-.824l.282-.499a2.25 2.25 0 00-2.08-3.165 4.502 4.502 0 00-4.476 4.292A9.753 9.753 0 013 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">17. Psikoloji Chatbotu (Gizli ve Anonim)</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Stres, kaygı veya depresyon anlarında 7/24 yanınızda olan, sizi anlayan ve gerektiğinde uzmana yönlendiren anonim destek.</p>
+                        </div>
+                        <!-- Feature 21 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="200">
+                             <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 mb-4">
+                                <svg class="w-6 h-6 text-indigo-500 dark:text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.6-3.751A11.959 11.959 0 0112 2.75c-2.176 0-4.205.6-5.902 1.636z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">21. Acil Durum Bilgileri ve Güvenlik</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Alerjiler, kan grubu, organ bağışı durumu gibi kritik bilgilerinizi ekleyin. Acil bir durumda bu bilgiler hayatınızı kurtarabilir.</p>
+                        </div>
+                        <!-- Feature 23 -->
+                        <div class="p-6 glass-card" data-aos="fade-up">
+                             <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-pink-100 dark:bg-pink-900/50 mb-4">
+                                <svg class="w-6 h-6 text-pink-500 dark:text-pink-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.962a3.752 3.752 0 01-4.23-1.01 3.752 3.752 0 01-1.01-4.23A3.75 3.75 0 018.25 6.03a3.75 3.75 0 014.23 1.01m-4.23 4.23a3.75 3.75 0 00-1.01 4.23A3.75 3.75 0 006.03 18.75m11.94-1.194c.534.534.534 1.404 0 1.938s-1.404.534-1.938 0l-1.194-1.194-1.938-1.938c-.534-.534-.534-1.404 0-1.938s1.404-.534 1.938 0l1.194 1.194 1.938 1.938z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">23. Aile Sağlığı Takibi (Dijital Koruyucu Melek)</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Çocuklarınızın veya yaşlı ebeveynlerinizin sağlık süreçlerini, ilaç alımlarını ve randevularını tek bir yerden takip edin.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kategori 2: Doktor & Klinik Verimliliği -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-center mb-10" data-aos="fade-up">Doktor & Klinik Verimliliği</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                         <!-- Feature 2 -->
+                        <div class="p-6 glass-card" data-aos="fade-up">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-teal-100 dark:bg-teal-900/50 mb-4">
+                                <svg class="w-6 h-6 text-teal-500 dark:text-teal-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.542L16.5 21.75l-.398-1.208a3.375 3.375 0 00-2.456-2.456L12.75 18l1.208-.398a3.375 3.375 0 002.456-2.456L16.5 14.25l.398 1.208a3.375 3.375 0 002.456 2.456L20.25 18l-1.208.398a3.375 3.375 0 00-2.456 2.456z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">2. Yapay Zeka Destekli İçerik ve Video Üretimi</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Doktorlar, yapay zeka ile saniyeler içinde makale ve video fikirleri oluşturabilir, sosyal medya paylaşımlarını otomatikleştirebilir.</p>
+                        </div>
+                         <!-- Feature 7 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/50 mb-4">
+                                <svg class="w-6 h-6 text-cyan-500 dark:text-cyan-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0h18M12 12.75h.008v.008H12v-.008z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">7. Yapay Zeka ile Otomatik Randevu Planlama</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Doktorlar, haftalık randevu kotalarını ve saat aralıklarını tanımlar, yapay zeka takvimi en verimli şekilde otomatik olarak doldurur.</p>
+                        </div>
+                         <!-- Feature 15 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-orange-100 dark:bg-orange-900/50 mb-4">
+                                <svg class="w-6 h-6 text-orange-500 dark:text-orange-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">15. Stok Takibi ve Tüketim Yönetimi</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Klinikteki ilaç ve sarf malzemeleri yapay zeka tarafından izlenir. Stok azaldığında sistem otomatik olarak uyarı ve tedarik önerisi sunar.</p>
+                        </div>
+                         <!-- Feature 19 -->
+                        <div class="p-6 glass-card" data-aos="fade-up">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-lime-100 dark:bg-lime-900/50 mb-4">
+                                <svg class="w-6 h-6 text-lime-500 dark:text-lime-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">19. Akıllı Asistan ile Canlı Randevu Takibi</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Hasta, kendisinden önce kaç kişi olduğunu ve tahmini bekleme süresini canlı olarak görür. Bekleme odası kaosu sona erer.</p>
+                        </div>
+                         <!-- Feature 20 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="100">
+                             <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gray-100 dark:bg-gray-700 mb-4">
+                                <svg class="w-6 h-6 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">20. Hasta Ön Bilgilendirme ve Yönlendirme</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Hasta, randevudan önce şikayetleriyle ilgili birkaç basit soruyu yanıtlar. Doktor, muayeneye hastayı tanıyarak başlar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kategori 3: Yapay Zeka ve Veri Gücü -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-center mb-10" data-aos="fade-up">Yapay Zeka ve Veri Gücü</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Feature 4 -->
+                        <div class="p-6 glass-card" data-aos="fade-up">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-fuchsia-100 dark:bg-fuchsia-900/50 mb-4">
+                                <svg class="w-6 h-6 text-fuchsia-500 dark:text-fuchsia-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0120.25 6v1.5m0 9V18A2.25 2.25 0 0118 20.25h-1.5m-9 0H6A2.25 2.25 0 013.75 18v-1.5M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">4. Yapay Zeka Destekli Çift Aşamalı Analiz</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Doktor, tahlil sonuçlarını yapay zekaya yorumlatarak ikinci bir görüş alır. Gözden kaçabilecek detaylar yakalanır, teşhis güvenirliği artar.</p>
+                        </div>
+                        <!-- Feature 8 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="100">
+                             <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-rose-100 dark:bg-rose-900/50 mb-4">
+                                <svg class="w-6 h-6 text-rose-500 dark:text-rose-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.325 3.478.097 6.756-1.343 8.45-3.997zM4.125 18.75h15.75c1.657 0 3-1.343 3-3v-6c0-1.657-1.343-3-3-3H4.125c-1.657 0-3 1.343-3 3v6c0 1.657 1.343 3 3 3z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">8. Yapay Zeka Destekli Danışmanlık</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Hastalar, yapay zekaya sağlık durumları hakkında sorular sorarak ön bilgi ve yönlendirme alabilir. Nihai karar her zaman doktordadır.</p>
+                        </div>
+                        <!-- Feature 12 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-sky-100 dark:bg-sky-900/50 mb-4">
+                                <svg class="w-6 h-6 text-sky-500 dark:text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.82m5.84-2.56a14.96 14.96 0 01.346 6.16m-5.84 2.56a14.96 14.96 0 00.346-6.16m0 0a6 6 0 0111.38-3.12l-5.84 5.84m-5.84-5.84a14.96 14.96 0 016.16-.346m-6.16.346a6 6 0 01-7.38 5.84m13.22-5.84a14.96 14.96 0 00-6.16.346m6.16-.346a6 6 0 005.84-7.38m-5.84 7.38l-5.84-5.84" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">12. Kronik Hastalar İçin Yapay Zeka Bilgilendirmesi</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Diyabet, hipertansiyon gibi kronik hastalıklar için kişiselleştirilmiş video, makale ve rehberler sunularak hastalık yönetimi bilinci artırılır.</p>
+                        </div>
+                        <!-- Feature 13 -->
+                        <div class="p-6 glass-card" data-aos="fade-up">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-100 dark:bg-emerald-900/50 mb-4">
+                                <svg class="w-6 h-6 text-emerald-500 dark:text-emerald-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0l-.07.002z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">13. Kişiselleştirilmiş Yapay Zeka Sağlık Koçluğu</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Yaş, hastalık geçmişi ve yaşam tarzınıza göre kişiye özel beslenme, egzersiz ve yaşam önerileri sunar. Sağlıklı yaşam yolculuğunuzda sizi motive eder.</p>
+                        </div>
+                        <!-- Feature 18 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-amber-100 dark:bg-amber-900/50 mb-4">
+                                <svg class="w-6 h-6 text-amber-500 dark:text-amber-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 15.75L3 17.25m18-1.5L21 17.25m-18 0h18M12 21V3M3 3h18M3 21h18" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">18. Yapay Zeka Tabanlı Erken Uyarı Sistemi</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Sağlık verilerinizdeki riskli trendleri (örneğin son 3 tansiyon ölçümünün yükselmesi) tespit ederek olası komplikasyonlar oluşmadan sizi ve doktorunuzu uyarır.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kategori 4: Ekosistem Entegrasyonları -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-center mb-10" data-aos="fade-up">Ekosistem Entegrasyonları</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Feature 9 -->
+                        <div class="p-6 glass-card" data-aos="fade-up">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-violet-100 dark:bg-violet-900/50 mb-4">
+                                <svg class="w-6 h-6 text-violet-500 dark:text-violet-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.325 3.478.097 6.756-1.343 8.45-3.997zM4.125 12h15.75c1.657 0 3-1.343 3-3v-3c0-1.657-1.343-3-3-3H4.125c-1.657 0-3 1.343-3 3v3c0 1.657 1.343 3 3 3z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">9. Doktor Onaylı Yapay Zeka İletişimi</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Doktor, hastaya iletilecek standart bilgileri yapay zekaya tanımlar. Yapay zeka, bu bilgileri sadece doktor onayıyla hastaya aktararak iletişimi hızlandırır.</p>
+                        </div>
+                        <!-- Feature 10 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="100">
+                             <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-stone-100 dark:bg-stone-700 mb-4">
+                                <svg class="w-6 h-6 text-stone-500 dark:text-stone-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">10. Ameliyat ve Muayene Sonrası Memnuniyet Takibi</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Yapay zeka, operasyon sonrası hastaları arayarak memnuniyetlerini ölçer, şikayetleri not alır ve geri bildirimleri anında doktora iletir.</p>
+                        </div>
+                        <!-- Feature 11 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="200">
+                             <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-zinc-100 dark:bg-zinc-700 mb-4">
+                                <svg class="w-6 h-6 text-zinc-500 dark:text-zinc-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">11. Doğrulanmış Doktor Puanlama ve Geri Bildirim</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Sadece hizmet almış hastalar doktorları puanlayabilir. Bu, adil ve güvenilir bir değerlendirme sistemi oluşturur.</p>
+                        </div>
+                        <!-- Feature 14 -->
+                        <div class="p-6 glass-card" data-aos="fade-up">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-red-100 dark:bg-red-900/50 mb-4">
+                                <svg class="w-6 h-6 text-red-500 dark:text-red-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9A2.25 2.25 0 004.5 18.75z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">14. Sesli ve Görüntülü Takip & Uzaktan Muayene</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Platform üzerinden doktorunuzla güvenli ve yüksek kaliteli sesli veya görüntülü görüşmeler gerçekleştirin.</p>
+                        </div>
+                        <!-- Feature 16 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-blue-100 dark:bg-blue-900/50 mb-4">
+                                <svg class="w-6 h-6 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75v10.5A2.25 2.25 0 004.5 19.5z" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">16. Sigorta Uyumluluğu ve Ödeme Bilgilendirmesi</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Randevu almadan önce, seçeceğiniz doktorun veya tedavinin sigortanız kapsamında olup olmadığını öğrenin, sürpriz ödemelerle karşılaşmayın.</p>
+                        </div>
+                        <!-- Feature 22 -->
+                        <div class="p-6 glass-card" data-aos="fade-up" data-aos-delay="200">
+                             <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-100 dark:bg-green-900/50 mb-4">
+                                <svg class="w-6 h-6 text-green-500 dark:text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                            </div>
+                            <h4 class="font-bold mb-2">22. Yapay Zeka Destekli Tıbbi Terim Açıklamaları</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Doktorunuzun kullandığı bir terimi anlamadınız mı? Üzerine dokunun, yapay zeka size basit ve anlaşılır bir dille açıklasın.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- ÜRÜN YOL HARİTASI BÖLÜMÜ (YENİ EKLENDİ) -->
+        <!-- Gelecek planlarını ve hedefleri gösteren bölüm. -->
+        <!-- =================================================================== -->
+        <section id="roadmap" class="py-20 sm:py-32 bg-white dark:bg-dark-bg/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <h2 class="text-base font-semibold text-secondary tracking-wider uppercase">Ürün Yol Haritası</h2>
+                    <p class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight">
+                        Adım Adım Ekosistemi İnşa Etmek
+                    </p>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+                        Vizyonumuzu yönetilebilir ve ticari olarak anlamlı fazlara ayırarak ilerleyeceğiz.
+                    </p>
+                </div>
+
+                <!-- Timeline -->
+                <div class="relative max-w-2xl mx-auto">
+                    <!-- The line -->
+                    <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 h-full w-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+
+                    <!-- Phase 1 -->
+                    <div class="relative mb-12" data-aos="fade-up">
+                        <div class="md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-12 items-start">
+                            <div class="md:text-right mb-4 md:mb-0">
+                                <p class="text-sm font-semibold text-primary">İlk 12 Ay</p>
+                                <h3 class="text-2xl font-bold">Faz 1: ÇEKİRDEK</h3>
+                                <p class="text-gray-500 dark:text-gray-400">MVP & Pazar Doğrulama</p>
+                            </div>
+                            <div class="hidden md:block w-4 h-4 rounded-full mt-2"></div>
+                            <div class="relative pl-10 md:pl-0 timeline-item timeline-item-primary">
+                                <div class="p-6 rounded-2xl glass-card">
+                                    <h4 class="font-semibold mb-2">Odak:</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">Doktor ve hasta arasındaki temel bilgi ve iletişim köprüsünü kurmak.</p>
+                                    <ul class="space-y-2 text-sm">
+                                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>e-Nabız Entegrasyonu</li>
+                                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Akıllı Randevu Özeti</li>
+                                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Tele-Danışmanlık</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="relative mb-12" data-aos="fade-up">
+                        <div class="md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-12 items-start">
+                             <div class="md:text-left mb-4 md:mb-0 md:order-3">
+                                <p class="text-sm font-semibold text-secondary">12-24 Ay</p>
+                                <h3 class="text-2xl font-bold">Faz 2: PLATFORM</h3>
+                                <p class="text-gray-500 dark:text-gray-400">Ekosistemi Genişletme</p>
+                            </div>
+                            <div class="hidden md:block w-4 h-4 rounded-full mt-2 md:order-2"></div>
+                            <div class="relative pl-10 md:pl-0 md:text-right md:order-1 timeline-item timeline-item-secondary">
+                                <div class="p-6 rounded-2xl glass-card">
+                                    <h4 class="font-semibold mb-2">Odak:</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">Gelir modelini çeşitlendirmek ve platformu vazgeçilmez kılmak.</p>
+                                    <ul class="space-y-2 text-sm">
+                                        <li class="flex items-center md:justify-end"><svg class="w-4 h-4 mr-2 md:mr-0 md:ml-2 text-secondary flex-shrink-0 order-1 md:order-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span class="order-2 md:order-1">Klinik Yönetim Paneli</span></li>
+                                        <li class="flex items-center md:justify-end"><svg class="w-4 h-4 mr-2 md:mr-0 md:ml-2 text-secondary flex-shrink-0 order-1 md:order-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span class="order-2 md:order-1">Sigorta Entegrasyonları</span></li>
+                                        <li class="flex items-center md:justify-end"><svg class="w-4 h-4 mr-2 md:mr-0 md:ml-2 text-secondary flex-shrink-0 order-1 md:order-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span class="order-2 md:order-1">Aile Sağlığı Modülü</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="relative" data-aos="fade-up">
+                         <div class="md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-12 items-start">
+                            <div class="md:text-right mb-4 md:mb-0">
+                                <p class="text-sm font-semibold text-purple-500">24+ Ay</p>
+                                <h3 class="text-2xl font-bold">Faz 3: ZEKÂ</h3>
+                                <p class="text-gray-500 dark:text-gray-400">Derinleşme ve Liderlik</p>
+                            </div>
+                            <div class="hidden md:block w-4 h-4 rounded-full mt-2"></div>
+                            <div class="relative pl-10 md:pl-0 timeline-item timeline-item-purple">
+                                <div class="p-6 rounded-2xl glass-card">
+                                    <h4 class="font-semibold mb-2">Odak:</h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">Veri liderliği ile pazarın standartlarını belirlemek.</p>
+                                    <ul class="space-y-2 text-sm">
+                                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Kişiselleştirilmiş AI Sağlık Koçluğu</li>
+                                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Anonim Veri Analitiği</li>
+                                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-purple-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Giyilebilir Teknoloji Entegrasyonu</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- PAZAR & İŞ MODELİ BÖLÜMÜ -->
+        <!-- Pazara giriş stratejisi ve gelir modelini açıklayan bölüm. -->
+        <!-- =================================================================== -->
+        <section id="market" class="py-20 sm:py-32">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-base font-semibold text-primary tracking-wider uppercase">Strateji</h2>
+                    <p class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight">
+                        Pazara Giriş ve Gelir Modeli
+                    </p>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+                        Odaklan, fethet, genişle. Practo'nun başarısını kanıtladığı hibrit B2B2C modeli ile pazara liderlik edeceğiz.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <!-- Go-to-Market -->
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-bold mb-8">İlk 100 Kliniği ve 10.000 Hastayı Nasıl Kazanacağız?</h3>
+                        <div class="space-y-8">
+                            <div class="flex">
+                                <div class="flex flex-col items-center mr-4">
+                                    <div>
+                                        <div class="flex items-center justify-center w-10 h-10 border-2 border-primary rounded-full">
+                                            <span class="font-bold text-primary">1</span>
+                                        </div>
+                                    </div>
+                                    <div class="w-px h-full bg-gray-300 dark:bg-gray-600"></div>
+                                </div>
+                                <div class="pb-8">
+                                    <h4 class="font-bold mb-1">Köprü Başı Pazarı (İlk 6 Ay)</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">İstanbul ve Ankara'daki 25 öncü özel kliniği hedefleyerek, "Kurucu Klinik" statüsü ile ürünü mükemmelleştirmek.</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex flex-col items-center mr-4">
+                                    <div>
+                                        <div class="flex items-center justify-center w-10 h-10 border-2 border-primary rounded-full">
+                                            <span class="font-bold text-primary">2</span>
+                                        </div>
+                                    </div>
+                                    <div class="w-px h-full bg-gray-300 dark:bg-gray-600"></div>
+                                </div>
+                                <div class="pb-8">
+                                    <h4 class="font-bold mb-1">B2B Satış Motoru (6-18 Ay)</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">İç satış ekibi, kanal ortaklıkları ve düşünce liderliği ile 100 ücretli klinik abonesine ulaşmak.</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex flex-col items-center mr-4">
+                                    <div>
+                                        <div class="flex items-center justify-center w-10 h-10 border-2 border-primary rounded-full">
+                                            <span class="font-bold text-primary">3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">B2C Kullanıcı Kazanımı (Paralel)</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">Doktorların mevcut hasta portföyünü platforma davet etmesiyle en düşük maliyetli ve en etkili büyümeyi sağlamak.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Business Model -->
+                    <div data-aos="fade-left">
+                        <h3 class="text-2xl font-bold mb-8">Gelir Akışlarımız</h3>
+                        <div class="space-y-6">
+                            <div class="p-6 rounded-2xl border-2 border-primary bg-primary/5 dark:bg-primary/10 relative overflow-hidden">
+                                <div class="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full"></div>
+                                <h4 class="text-lg font-bold text-primary">B2B SaaS - SacreLife Pro (Ana Gelir)</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Klinikler ve doktorlar için aylık/yıllık abonelik paketleri.</p>
+                                <ul class="mt-2 text-sm list-disc list-inside">
+                                    <li>Temel Paket</li>
+                                    <li>Pro Paket (Önerilen)</li>
+                                    <li>Enterprise Paket</li>
+                                </ul>
+                            </div>
+                             <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-700">
+                                <h4 class="text-lg font-bold">B2B2C - Kullanım Bazlı (Büyüme Motoru)</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Platform üzerinden yapılan tele-danışmanlık görüşmelerinden %15 komisyon.</p>
+                            </div>
+                             <div class="p-6 rounded-2xl border border-gray-200 dark:border-gray-700">
+                                <h4 class="text-lg font-bold">Kurumsal Sağlık Paketleri</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Çalışanlarına modern sağlık faydaları sunmak isteyen şirketler için yıllık lisanslama.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- REKABET BÖLÜMÜ -->
+        <!-- Pazaryeri ve rakiplere karşı avantajları gösteren bölüm. -->
+        <!-- =================================================================== -->
+        <section id="competition" class="py-20 sm:py-32 bg-white dark:bg-dark-bg/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-base font-semibold text-primary tracking-wider uppercase">Rekabet Avantajı</h2>
+                    <p class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight">
+                        Neden Biz Kazanacağız?
+                    </p>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+                        Pazar kalabalık, ancak biz farklı bir oyun oynuyoruz. Rakiplerimiz ya çok genel ya da çok niş. Biz ise ikisinin en iyi yönlerini birleştiriyoruz.
+                    </p>
+                </div>
+                <div class="overflow-x-auto" data-aos="fade-up">
+                    <table class="w-full min-w-[800px] comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Özellik</th>
+                                <th class="text-center"><span class="gradient-text font-bold">SacreLife</span></th>
+                                <th class="text-center">e-Nabız</th>
+                                <th class="text-center">Global Rakipler (Kry, Ada)</th>
+                                <th class="text-center">Yerel Randevu Siteleri</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AI Destekli Kişisel İçgörü</td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto cross-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto cross-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
+                            </tr>
+                            <tr>
+                                <td>e-Nabız Entegrasyonu</td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto cross-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto cross-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
+                            </tr>
+                            <tr>
+                                <td>Klinik Yönetim Araçları (B2B SaaS)</td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto cross-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto partial-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg></td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto partial-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg></td>
+                            </tr>
+                            <tr>
+                                <td>Uçtan Uca Sağlık Yönetimi</td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto partial-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg></td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto partial-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg></td>
+                                <td class="text-center"><svg class="w-6 h-6 mx-auto cross-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-12 text-center" data-aos="fade-up">
+                    <h4 class="text-xl font-bold">Savunulabilir "Kale Hendeklerimiz" (Moats)</h4>
+                    <div class="mt-6 grid md:grid-cols-3 gap-8">
+                        <div class="p-6 glass-card border-t-4 border-primary">
+                            <h5 class="font-bold text-lg mb-2">Tescilli Veri & AI</h5>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Türkiye'ye özgü veri setleri ile eğitilmiş, kopyalanamaz yapay zeka modelleri.</p>
+                        </div>
+                        <div class="p-6 glass-card border-t-4 border-secondary">
+                            <h5 class="font-bold text-lg mb-2">Ağ Etkileri</h5>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">B2B2C modelimizle, her yeni doktor ve hasta platformu herkes için daha değerli hale getirir.</p>
+                        </div>
+                        <div class="p-6 glass-card border-t-4 border-purple-500">
+                             <h5 class="font-bold text-lg mb-2">Derin Entegrasyon</h5>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Hem e-Nabız altyapısına hem de klinik iş akışlarına entegre olarak vazgeçilmez bir araç olmak.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- FİNANSALLAR BÖLÜMÜ -->
+        <!-- Finansal projeksiyonları ve temel metrikleri gösteren bölüm. -->
+        <!-- =================================================================== -->
+        <section id="financials" class="py-20 sm:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-base font-semibold text-secondary tracking-wider uppercase">Finansallar</h2>
+                    <p class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight">
+                        3 Yıllık Büyüme ve Kârlılık Hedefleri
+                    </p>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+                        Gerçekçi varsayımlara dayanan, iddialı ama ulaşılabilir hedeflerimiz.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-5 gap-8 items-center">
+                    <!-- Chart -->
+                    <div class="lg:col-span-3 p-8 glass-card" data-aos="fade-right">
+                        <canvas id="financialChart"></canvas>
+                    </div>
+                    <!-- Metrics Table -->
+                    <div class="lg:col-span-2 space-y-4" data-aos="fade-left">
+                        <div class="p-4 rounded-lg bg-gray-100 dark:bg-gray-800">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Yıl 1 - Ücretli Klinik</p>
+                            <p class="text-2xl font-bold"><span class="counter" data-target="100">0</span></p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-gray-100 dark:bg-gray-800">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Yıl 2 - Ücretli Klinik</p>
+                            <p class="text-2xl font-bold"><span class="counter" data-target="500">0</span></p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-gray-100 dark:bg-gray-800">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Yıl 3 - Ücretli Klinik</p>
+                            <p class="text-2xl font-bold"><span class="counter" data-target="1500">0</span></p>
+                        </div>
+                        <div class="p-6 rounded-lg bg-gradient-to-r from-primary/80 to-secondary/80 text-white">
+                            <p class="text-sm opacity-80">Yıl 3 - Yıllık Tekrarlayan Gelir (ARR)</p>
+                            <p class="text-3xl font-bold">$<span class="counter" data-target="5.5" data-decimal="1">0</span> Milyon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- EKİP BÖLÜMÜ -->
+        <!-- Projeyi hayata geçirecek ekibi tanıtan bölüm. -->
+        <!-- =================================================================== -->
+        <section id="team" class="py-20 sm:py-32 bg-white dark:bg-dark-bg/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-base font-semibold text-primary tracking-wider uppercase">Ekip</h2>
+                    <p class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight">
+                        Bu Vizyonu Gerçeğe Dönüştürecek Güç
+                    </p>
+                     <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400">
+                        Teknoloji, sağlık ve iş geliştirme alanlarında deneyimli, tutkulu ve adanmış bir kurucu ekip.
+                    </p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <img class="w-40 h-40 rounded-full mx-auto mb-4 object-cover shadow-lg ring-4 ring-primary/50" src="https://placehold.co/200x200/0d9488/FFFFFF?text=CEO" alt="CEO Fotoğrafı" onerror="this.onerror=null;this.src='https://placehold.co/200x200/cccccc/FFFFFF?text=CEO';">
+                        <h3 class="text-xl font-bold">Adınız Soyadınız</h3>
+                        <p class="text-primary font-semibold">Kurucu & CEO</p>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm">Sağlık teknolojileri ve stratejik yönetim alanında 10+ yıl deneyim. Önceki girişimini başarıyla exit etti.</p>
+                    </div>
+                     <!-- Team Member 2 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <img class="w-40 h-40 rounded-full mx-auto mb-4 object-cover shadow-lg ring-4 ring-secondary/50" src="https://placehold.co/200x200/2563eb/FFFFFF?text=CTO" alt="CTO Fotoğrafı" onerror="this.onerror=null;this.src='https://placehold.co/200x200/cccccc/FFFFFF?text=CTO';">
+                        <h3 class="text-xl font-bold">İsim Soyisim</h3>
+                        <p class="text-secondary font-semibold">Kurucu & CTO</p>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm">Yapay zeka ve büyük veri mimarilerinde uzman. Önde gelen teknoloji firmalarında liderlik rolleri üstlendi.</p>
+                    </div>
+                     <!-- Team Member 3 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <img class="w-40 h-40 rounded-full mx-auto mb-4 object-cover shadow-lg ring-4 ring-purple-500/50" src="https://placehold.co/200x200/7c3aed/FFFFFF?text=CMO" alt="CMO Fotoğrafı" onerror="this.onerror=null;this.src='https://placehold.co/200x200/cccccc/FFFFFF?text=CMO';">
+                        <h3 class="text-xl font-bold">İsim Soyisim</h3>
+                        <p class="text-purple-500 font-semibold">Kurucu & CMO</p>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm">Dijital pazarlama ve B2B SaaS büyüme stratejilerinde kanıtlanmış başarı. Pazara giriş uzmanı.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================== -->
+        <!-- YATIRIM BÖLÜMÜ -->
+        <!-- Yatırım talebini ve fonların nasıl kullanılacağını açıklayan bölüm. -->
+        <!-- =================================================================== -->
+        <section id="investment" class="py-20 sm:py-32 bg-gray-900 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-base font-semibold text-primary-light tracking-wider uppercase">Yatırım Talebi</h2>
+                    <p class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+                        Vizyonu Gerçeğe Dönüştürmek İçin Stratejik Sermaye
+                    </p>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                    <!-- The Ask Details -->
+                    <div data-aos="fade-right">
+                        <div class="mb-8">
+                            <p class="text-lg text-gray-300">Tohum Yatırım Turu Talebi</p>
+                            <p class="text-5xl font-bold gradient-text">$3,000,000</p>
+                        </div>
+                        <div class="mb-8">
+                            <p class="text-lg text-gray-300">Sunulan Hisse</p>
+                            <p class="text-3xl font-bold text-white">20%</p>
+                            <p class="text-sm text-gray-400">($15M Post-Money Değerleme)</p>
+                        </div>
+                        <p class="text-gray-300">Bu yatırım, 24 aylık bir operasyon gücü sağlayarak bizi pazar liderliğine taşıyacak.</p>
+                    </div>
+
+                    <!-- Fund Usage Chart -->
+                    <div class="relative w-full max-w-sm mx-auto" data-aos="fade-left">
+                        <canvas id="fundUsageChart"></canvas>
+                        <div class="absolute inset-0 flex items-center justify-center text-center pointer-events-none">
+                            <div>
+                                <p class="text-sm text-gray-400">Fon Kullanımı</p>
+                                <p class="text-2xl font-bold text-white">Dağılım</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-16 text-center" data-aos="fade-up">
+                    <h4 class="text-xl font-semibold mb-4">Geleceğin Sağlık Altyapısına Yatırım Yapın.</h4>
+                    <p class="max-w-2xl mx-auto text-gray-400 mb-8">Sadece bir uygulamaya değil, hem insan hayatına hem de sermayeye dokunan, ölçeklenebilir ve kârlı bir ekosisteme ortak olun.</p>
+                    <button onclick="openInvestmentModal()" class="bg-white text-gray-900 font-bold px-10 py-4 rounded-full shadow-lg hover:bg-gray-200 transform hover:scale-105 transition-all text-lg">
+                        İletişime Geçin
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =================================================================== -->
+    <!-- FOOTER -->
+    <!-- Sayfanın en altındaki bölüm. -->
+    <!-- =================================================================== -->
+    <footer class="bg-light-bg dark:bg-dark-bg border-t border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p class="text-gray-500 dark:text-gray-400">&copy; <span id="footer-year"></span> SacreLife. Tüm hakları saklıdır.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors" aria-label="Twitter">Twitter</a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors" aria-label="AngelList">AngelList</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- =================================================================== -->
+    <!-- YENİ BÖLÜM: YATIRIM FIRSATI MODALI -->
+    <!-- =================================================================== -->
+    <div id="investment-modal" class="fixed inset-0 bg-black/70 z-50 items-center justify-center p-4 hidden" onclick="if (event.target === this) closeInvestmentModal()">
+        <div id="investment-modal-content" class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-3xl p-8 relative transform transition-all duration-300 scale-95 opacity-0 overflow-y-auto max-h-[90vh]">
+            <button onclick="closeInvestmentModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:hover:text-white transition-colors" aria-label="Kapat">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h3 class="text-3xl font-bold mb-2 gradient-text">Dijital Sağlık: Patlamaya Hazır Bir Pazar</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-8">Rakamlar, neden şimdi yatırım yapmanız gerektiğini anlatıyor.</p>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Data Card 1 -->
+                <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-700">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Küresel Dijital Sağlık Pazarı</p>
+                    <p class="text-4xl font-bold text-primary dark:text-primary-light">$2.19 Trilyon</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">2034'e kadar ulaşılması beklenen değer (%21.2 CAGR).</p>
+                </div>
+                <!-- Data Card 2 -->
+                <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-700">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Sağlıkta Yapay Zeka Pazarı</p>
+                    <p class="text-4xl font-bold text-secondary dark:text-secondary-light">44%</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300">2032'ye kadar beklenen yıllık bileşik büyüme oranı (CAGR).</p>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h4 class="text-xl font-bold mb-4">Neden Bu Büyüme Kaçınılmaz?</h4>
+                <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start"><span class="mr-2 mt-1 text-primary">✓</span><span>**Artan Kronik Hastalıklar:** Dünya genelinde yaşlanan nüfus, sürekli takip ve proaktif yönetim gerektiren çözümlere olan talebi artırıyor.</span></li>
+                    <li class="flex items-start"><span class="mr-2 mt-1 text-primary">✓</span><span>**Tüketici Talebi:** Hastalar artık sağlık yolculuklarında daha aktif bir rol almak, verilerine erişmek ve kişiselleştirilmiş hizmetler talep ediyor.</span></li>
+                    <li class="flex items-start"><span class="mr-2 mt-1 text-primary">✓</span><span>**Maliyet Baskısı:** Sağlık sistemleri, yapay zeka ve otomasyon ile verimliliği artırarak ve önleyici bakımı teşvik ederek maliyetleri düşürmek zorunda.</span></li>
+                </ul>
+            </div>
+            
+            <div class="mt-8 text-center">
+                 <p class="text-lg mb-4">Bu devrimin bir parçası olmaya hazır mısınız?</p>
+                 <button onclick="closeInvestmentModal(); openContactModal();" class="bg-gradient-to-r from-primary to-secondary text-white font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
+                    Detaylı Görüşelim
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- İLETİŞİM MODALI -->
+    <!-- "İletişime Geç" butonuna tıklandığında açılan pencere. -->
+    <!-- =================================================================== -->
+    <div id="contact-modal" class="fixed inset-0 bg-black/70 z-50 items-center justify-center p-4 hidden" onclick="if (event.target === this) closeContactModal()">
+        <div id="modal-content" class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-md p-8 relative transform transition-all duration-300 scale-95 opacity-0">
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:hover:text-white transition-colors" aria-label="Kapat">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h3 class="text-2xl font-bold mb-2">Yatırımcı İlişkileri</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">Detaylı bilgi ve görüşme talepleriniz için bizimle iletişime geçin.</p>
+            <form id="contact-form">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Adınız Soyadınız</label>
+                    <input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                </div>
+                 <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">E-posta Adresiniz</label>
+                    <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                </div>
+                 <div class="mb-6">
+                    <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mesajınız</label>
+                    <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
+                    Gönder
+                </button>
+            </form>
+            <div id="form-success-message" class="hidden text-center p-4 bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 rounded-lg">
+                Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =================================================================== -->
+    <!-- JAVASCRIPT BÖLÜMÜ -->
+    <!-- Sayfanın interaktifliğini ve dinamik işlevselliğini sağlayan scriptler. -->
+    <!-- =================================================================== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Betiğin tamamının DOM yüklendikten sonra çalışmasını sağlar
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            /**
+             * -----------------------------------------------------------------
+             * GENEL BAŞLATMA FONKSİYONLARI
+             * -----------------------------------------------------------------
+             */
+
+            // Tüm başlatma fonksiyonlarını çağıran ana fonksiyon
+            function initializeApp() {
+                try {
+                    initializeAOS();
+                    setupDarkMode();
+                    setupHeaderScroll();
+                    setupMobileMenu();
+                    initializeCounters();
+                    setupTabs();
+                    setupModals();
+                    createCharts();
+                    updateFooterYear();
+                } catch (error) {
+                    console.error("Uygulama başlatılırken bir hata oluştu:", error);
+                }
+            }
+            
+            /**
+             * -----------------------------------------------------------------
+             * Animate On Scroll (AOS) Kütüphanesi Başlatma
+             * -----------------------------------------------------------------
+             * Sayfa kaydırıldıkça elementlere animasyon ekler.
+             */
+            function initializeAOS() {
+                AOS.init({
+                    duration: 800, // Animasyon süresi (ms)
+                    once: true,    // Animasyonlar sadece bir kez çalışır
+                    offset: 50,    // Elementin ne kadar göründüğünde animasyonun başlayacağı
+                });
+            }
+
+            /**
+             * -----------------------------------------------------------------
+             * KARANLIK MOD (DARK MODE) İŞLEVSELLİĞİ
+             * -----------------------------------------------------------------
+             * Kullanıcının tema tercihini yönetir ve localStorage'a kaydeder.
+             */
+            function setupDarkMode() {
+                const darkModeToggle = document.getElementById('dark-mode-toggle');
+                const sunIcon = document.getElementById('sun-icon');
+                const moonIcon = document.getElementById('moon-icon');
+                const html = document.documentElement;
+
+                // Kaydedilmiş tema tercihini kontrol et ve uygula
+                const applyTheme = () => {
+                    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                        html.classList.add('dark');
+                        sunIcon.classList.add('hidden');
+                        moonIcon.classList.remove('hidden');
+                    } else {
+                        html.classList.remove('dark');
+                        sunIcon.classList.remove('hidden');
+                        moonIcon.classList.add('hidden');
+                    }
+                    // Grafiklerin temasını da güncelle
+                    updateChartsTheme();
+                };
+
+                // Buton tıklama olayını dinle
+                darkModeToggle.addEventListener('click', () => {
+                    html.classList.toggle('dark');
+                    sunIcon.classList.toggle('hidden');
+                    moonIcon.classList.toggle('hidden');
+
+                    // Tercihi localStorage'a kaydet
+                    localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+                    updateChartsTheme();
+                });
+                
+                applyTheme();
+            }
+            
+            /**
+             * -----------------------------------------------------------------
+             * HEADER STİLİ (KAYDIRMAYA BAĞLI)
+             * -----------------------------------------------------------------
+             * Sayfa aşağı kaydırıldığında header'a arkaplan ve gölge ekler.
+             */
+            function setupHeaderScroll() {
+                const header = document.getElementById('main-header');
+                if (!header) return;
+
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('bg-white/80', 'dark:bg-dark-bg/80', 'backdrop-blur-lg', 'shadow-md');
+                    } else {
+                        header.classList.remove('bg-white/80', 'dark:bg-dark-bg/80', 'backdrop-blur-lg', 'shadow-md');
+                    }
+                }, { passive: true }); // Performans için pasif dinleyici
+            }
+
+            /**
+             * -----------------------------------------------------------------
+             * MOBİL MENÜ İŞLEVSELLİĞİ
+             * -----------------------------------------------------------------
+             */
+            function setupMobileMenu() {
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+                if (!mobileMenuButton || !mobileMenu) return;
+
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Mobil menüdeki bir linke tıklandığında menüyü kapat
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            /**
+             * -----------------------------------------------------------------
+             * ANİMASYONLU SAYAÇLAR
+             * -----------------------------------------------------------------
+             * Sayfada göründüğünde sayıları animasyonlu olarak artırır.
+             */
+            function initializeCounters() {
+                const counters = document.querySelectorAll('.counter');
+                const speed = 200; // Animasyon hızı (düşük değer = yavaş)
+
+                const animateCounter = (counter) => {
+                    const target = +counter.getAttribute('data-target');
+                    const isDecimal = counter.hasAttribute('data-decimal');
+                    
+                    const updateCount = () => {
+                        const currentCount = +counter.innerText;
+                        const increment = target / speed;
+
+                        if (currentCount < target) {
+                            let newCount = currentCount + increment;
+                            counter.innerText = isDecimal ? newCount.toFixed(1) : Math.ceil(newCount);
+                            setTimeout(updateCount, 15);
+                        } else {
+                            counter.innerText = isDecimal ? target.toFixed(1) : target;
+                        }
+                    };
+                    updateCount();
+                };
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCounter(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                counters.forEach(counter => {
+                    observer.observe(counter);
+                });
+            }
+
+            /**
+             * -----------------------------------------------------------------
+             * SEKME (TAB) İŞLEVSELLİĞİ (GÜNCELLENDİ)
+             * -----------------------------------------------------------------
+             * Hasta ve Doktor görünümleri arasında geçiş sağlar ve telefon ekranını günceller.
+             */
+            function setupTabs() {
+                const tabButtons = document.querySelectorAll('.tab-button');
+                const tabContents = document.querySelectorAll('.tab-content');
+                const phonePatientView = document.getElementById('phone-patient-view');
+                const phoneDoctorView = document.getElementById('phone-doctor-view');
+                const phoneScreen = document.getElementById('phone-screen-content');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const tabId = button.getAttribute('data-tab');
+
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+
+                        tabContents.forEach(content => content.classList.remove('active'));
+                        document.getElementById(tabId + '-tab').classList.add('active');
+
+                        // Telefon ekranı içeriğini güncelle
+                        phoneScreen.style.opacity = 0;
+                        setTimeout(() => {
+                            if (tabId === 'patient') {
+                                phonePatientView.style.display = 'block';
+                                phoneDoctorView.style.display = 'none';
+                            } else {
+                                phonePatientView.style.display = 'none';
+                                phoneDoctorView.style.display = 'block';
+                            }
+                            phoneScreen.style.opacity = 1;
+                        }, 300); // Geçiş efekti için
+                    });
+                });
+            }
+
+            /**
+             * -----------------------------------------------------------------
+             * MODAL PENCERE İŞLEVSELLİĞİ (YENİ)
+             * -----------------------------------------------------------------
+             */
+            function setupModals() {
+                // Yatırım Modalı
+                const investmentModal = document.getElementById('investment-modal');
+                const investmentModalContent = document.getElementById('investment-modal-content');
+                
+                window.openInvestmentModal = function() {
+                    if (!investmentModal || !investmentModalContent) return;
+                    investmentModal.style.display = 'flex';
+                    setTimeout(() => {
+                        investmentModalContent.classList.remove('scale-95', 'opacity-0');
+                        investmentModalContent.classList.add('scale-100', 'opacity-100');
+                    }, 10);
+                }
+
+                window.closeInvestmentModal = function() {
+                    if (!investmentModal || !investmentModalContent) return;
+                    investmentModalContent.classList.remove('scale-100', 'opacity-100');
+                    investmentModalContent.classList.add('scale-95', 'opacity-0');
+                    setTimeout(() => {
+                        investmentModal.style.display = 'none';
+                    }, 300);
+                }
+
+                // İletişim Modalı
+                const contactModal = document.getElementById('contact-modal');
+                const modalContent = document.getElementById('modal-content');
+                const contactForm = document.getElementById('contact-form');
+                const successMessage = document.getElementById('form-success-message');
+
+                window.openContactModal = function() {
+                    if (!contactModal || !modalContent) return;
+                    contactModal.style.display = 'flex';
+                    setTimeout(() => {
+                        modalContent.classList.remove('scale-95', 'opacity-0');
+                        modalContent.classList.add('scale-100', 'opacity-100');
+                    }, 10);
+                }
+
+                window.closeContactModal = function() {
+                    if (!contactModal || !modalContent) return;
+                    modalContent.classList.remove('scale-100', 'opacity-100');
+                    modalContent.classList.add('scale-95', 'opacity-0');
+                    setTimeout(() => {
+                        contactModal.style.display = 'none';
+                        contactForm.style.display = 'block';
+                        successMessage.style.display = 'none';
+                        contactForm.reset();
+                    }, 300);
+                }
+
+                if (contactForm) {
+                    contactForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        contactForm.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        setTimeout(closeContactModal, 3000);
+                    });
+                }
+            }
+            
+            /**
+             * -----------------------------------------------------------------
+             * FOOTER YILINI GÜNCELLEME
+             * -----------------------------------------------------------------
+             */
+            function updateFooterYear() {
+                const yearSpan = document.getElementById('footer-year');
+                if (yearSpan) {
+                    yearSpan.textContent = new Date().getFullYear();
+                }
+            }
+
+            /**
+             * -----------------------------------------------------------------
+             * CHARTS.JS GRAFİK OLUŞTURMA VE GÜNCELLEME
+             * -----------------------------------------------------------------
+             */
+            let financialChartInstance, fundUsageChartInstance;
+
+            // Tema değişikliğine göre grafik seçeneklerini döndüren fonksiyon
+            const getChartOptions = () => {
+                const isDarkMode = document.documentElement.classList.contains('dark');
+                const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+                const textColor = isDarkMode ? '#cbd5e1' : '#475569'; // slate-300 ve slate-600
+                const titleColor = isDarkMode ? '#f1f5f9' : '#0f172a'; // slate-100 ve slate-900
+
+                return {
+                    financial: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    color: textColor,
+                                    font: { size: 14 }
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) { label += ': '; }
+                                        if (context.parsed.y !== null) {
+                                            label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', notation: 'compact' }).format(context.parsed.y);
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: { color: textColor, font: { size: 12 } },
+                                grid: { display: false }
+                            },
+                            y: {
+                                ticks: { 
+                                    color: textColor, 
+                                    font: { size: 12 },
+                                    callback: function(value) {
+                                        return '$' + (value / 1000000) + 'M';
+                                    }
+                                },
+                                grid: { color: gridColor, borderDash: [2, 4] }
+                            }
+                        }
+                    },
+                    fundUsage: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        cutout: '70%',
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    color: textColor,
+                                    font: { size: 12 },
+                                    padding: 20
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.label || '';
+                                        if (label) { label += ': '; }
+                                        if (context.parsed !== null) {
+                                            label += context.parsed + '%';
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+            };
+
+            // Grafikleri oluşturan ana fonksiyon
+            function createCharts() {
+                const financialCtx = document.getElementById('financialChart');
+                const fundUsageCtx = document.getElementById('fundUsageChart');
+
+                if (!financialCtx || !fundUsageCtx) {
+                    console.warn("Grafik canvas elementleri bulunamadı.");
+                    return;
+                }
+
+                const chartOptions = getChartOptions();
+
+                // Finansal Grafik Verileri
+                const financialData = {
+                    labels: ['Yıl 1', 'Yıl 2', 'Yıl 3'],
+                    datasets: [{
+                        label: 'Yıllık Tekrarlayan Gelir (ARR)',
+                        data: [350000, 1800000, 5500000],
+                        backgroundColor: 'rgba(13, 148, 136, 0.6)', // primary
+                        borderColor: 'rgba(13, 148, 136, 1)',
+                        borderWidth: 2,
+                        borderRadius: 5,
+                        barPercentage: 0.6
+                    }]
+                };
+                
+                // Fon Kullanımı Grafik Verileri
+                const fundUsageData = {
+                    labels: ['Ürün & Teknoloji', 'Satış & Pazarlama', 'Operasyon & Yedek'],
+                    datasets: [{
+                        label: 'Fon Kullanım Dağılımı',
+                        data: [40, 35, 25],
+                        backgroundColor: [
+                            'rgba(13, 148, 136, 0.8)',  // primary
+                            'rgba(37, 99, 235, 0.8)', // secondary
+                            'rgba(124, 58, 237, 0.8)' // purple-600
+                        ],
+                        borderColor: document.documentElement.classList.contains('dark') ? '#020617' : '#f8fafc',
+                        borderWidth: 3,
+                        hoverOffset: 8
+                    }]
+                };
+
+                financialChartInstance = new Chart(financialCtx, {
+                    type: 'bar',
+                    data: financialData,
+                    options: chartOptions.financial
+                });
+
+                fundUsageChartInstance = new Chart(fundUsageCtx, {
+                    type: 'doughnut',
+                    data: fundUsageData,
+                    options: chartOptions.fundUsage
+                });
+            }
+
+            // Tema değiştiğinde grafikleri güncelleyen fonksiyon
+            window.updateChartsTheme = function() {
+                if (!financialChartInstance || !fundUsageChartInstance) return;
+                
+                const chartOptions = getChartOptions();
+                
+                financialChartInstance.options = chartOptions.financial;
+                fundUsageChartInstance.options = chartOptions.fundUsage;
+                fundUsageChartInstance.data.datasets[0].borderColor = document.documentElement.classList.contains('dark') ? '#020617' : '#f8fafc';
+                
+                financialChartInstance.update();
+                fundUsageChartInstance.update();
+            };
+            
+            // Uygulamayı başlat
+            initializeApp();
+        });
+    </script>
+</body>
+</html>

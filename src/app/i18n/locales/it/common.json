@@ -1,0 +1,480 @@
+{
+  "header": {
+    "navigation": {
+      "problem": "Problema",
+      "solution": "Soluzione", 
+      "features": "Caratteristiche",
+      "roadmap": "Roadmap",
+      "market": "Mercato",
+      "competition": "Competizione",
+      "financials": "Finanziari",
+      "team": "Team",
+      "investment": "Investi"
+    },
+    "buttons": {
+      "investNow": "Investi Ora",
+      "changeLanguage": "Cambia Lingua",
+      "toggleTheme": "Attiva/Disattiva Modalità Scura",
+      "openMenu": "Apri Menu"
+    },
+    "languages": {
+      "turkish": "Türkçe",
+      "english": "English",
+      "spanish": "Español",
+      "french": "Français",
+      "german": "Deutsch",
+      "italian": "Italiano",
+      "portuguese": "Português",
+      "russian": "Русский",
+      "arabic": "العربية"
+    }
+  },
+  "hero": {
+    "mainTitle": "Dati Sanitari della Turchia",
+    "subtitle": "Ecosistema Intelligente che li Rende Significativi",
+    "description": "SacreLife è una rivoluzione sanitaria alimentata dall'IA che trasforma i dati sanitari dispersi in intuizioni significative e azioni proattive per pazienti e medici.",
+    "buttons": {
+      "investmentOpportunity": "Scopri Opportunità di Investimento",
+      "seeFeatures": "Vedi Caratteristiche"
+    }
+  },
+  "problem": {
+    "sectionTitle": "Problemi che Risolviamo",
+    "title": "10 Grandi Inefficienze Fondamentali del Sistema Sanitario",
+    "subtitle": "SacreLife elimina con l'intelligenza artificiale i problemi di comunicazione, monitoraggio e gestione al centro del sistema che pazienti e medici affrontano quotidianamente.",
+    "problems": {
+      "1": {
+        "title": "Divario di Comunicazione e Confusione delle Informazioni",
+        "description": "I pazienti non capiscono i termini medici usati dai medici; non riescono a cogliere completamente il processo di trattamento, portando a problemi di fiducia.",
+        "solution": "L'IA spiega ogni termine medico in un linguaggio semplice e comprensibile. I pazienti capiscono chiaramente cosa stanno vivendo e cosa devono fare."
+      },
+      "2": {
+        "title": "Intervento Tardivo e Complicazioni Prevenibili",
+        "description": "Valori cronici come pressione sanguigna e glucosio non sono monitorati regolarmente dai pazienti, quindi non notati fino a raggiungere livelli pericolosi.",
+        "solution": "L'IA analizza continuamente i dati e utilizza un sistema di 'allerta precoce' per notificare a pazienti e medici situazioni rischiose, attivando l'assistenza sanitaria preventiva."
+      },
+      "3": {
+        "title": "Dimenticare o Uso Irregolare di Farmaci",
+        "description": "I pazienti dimenticano di prendere i farmaci in tempo, riducendo l'efficacia del trattamento, e i medici non sono consapevoli di questa situazione.",
+        "solution": "Vengono inviati promemoria intelligenti, i pazienti segnano 'preso' nell'app. I medici possono vedere la cronologia d'uso in tempo reale per ottimizzare il trattamento."
+      },
+      "4": {
+        "title": "Tempi di Attesa e Caos degli Appuntamenti",
+        "description": "I pazienti arrivano presto in ospedale, aspettano lunghi periodi e trascorrono il tempo inefficientemente. Questo riduce la soddisfazione del paziente.",
+        "solution": "L'IA mostra ai pazienti dal vivo il numero di persone in attesa e il tempo di attesa stimato. I pazienti pianificano il loro tempo efficientemente."
+      },
+      "5": {
+        "title": "Mancanza di Informazioni di Trattamento Specifiche del Paziente",
+        "description": "I pazienti non possono accedere a informazioni sufficienti e affidabili sulla loro malattia e su come conviverci, perdendosi nella disinformazione di internet.",
+        "solution": "L'IA fornisce contenuti educativi verificati e personalizzati (articoli, video, guide) specifici per le condizioni croniche dei pazienti."
+      },
+      "6": {
+        "title": "Mancanza di Preparazione Pre-Appuntamento",
+        "description": "I medici iniziano gli incontri senza conoscere il paziente; il prezioso tempo dell'esame viene speso imparando la storia del paziente, prolungando il processo.",
+        "solution": "I pazienti rispondono a brevi domande prima degli appuntamenti, queste informazioni vengono inoltrate ai medici. Gli esami diventano più preparati, veloci ed efficienti."
+      },
+      "7": {
+        "title": "Incapacità di Monitorare lo Stato di Salute dei Parenti",
+        "description": "Lo stato di salute di individui anziani o bambini (uso di farmaci, appuntamenti) non può essere efficacemente monitorato a distanza dai membri della famiglia.",
+        "solution": "L'app permette di monitorare i processi di salute dei parenti. Funziona come un 'angelo custode digitale' fornendo sicurezza familiare."
+      },
+      "8": {
+        "title": "Carico di Comunicazione e Burnout dei Medici",
+        "description": "I medici non riescono a mantenere comunicazione uno-a-uno con ogni paziente e ripetere informazioni standard nel flusso occupato di pazienti.",
+        "solution": "I medici definiscono messaggi standard che vogliono che l'IA comunichi ai pazienti; il sistema trasmette questo automaticamente, riducendo il carico del medico."
+      },
+      "9": {
+        "title": "Carenze di Materiali e Scorte",
+        "description": "Farmaci o materiali di consumo nelle cliniche possono esaurirsi non pianificato, causando interruzioni del servizio.",
+        "solution": "L'IA monitora l'uso delle scorte, fornisce avvisi automatici e raccomandazioni di fornitura per prodotti in esaurimento, aumentando l'efficienza operativa della clinica."
+      },
+      "10": {
+        "title": "Feedback Irraggiungibile",
+        "description": "La soddisfazione del paziente o i reclami spesso non raggiungono i medici, il che è un ostacolo al miglioramento della qualità del servizio.",
+        "solution": "L'IA misura la soddisfazione del paziente dopo esami o chirurgie, trasmette problemi ai medici e avvia processi di follow-up quando necessario."
+      }
+    },
+    "solutionLabel": "Soluzione SacreLife:"
+  },
+  "solution": {
+    "sectionTitle": "La Nostra Soluzione",
+    "title": "Piattaforma che Rende e-Nabız Intelligente",
+    "subtitle": "SacreLife non è un concorrente di e-Nabız, ma uno 'strato intelligente' complementare. Trasformiamo dati dispersi in intuizioni che salvano vite.",
+    "tabs": {
+      "patient": "Per Pazienti",
+      "doctor": "Per Medici"
+    },
+    "patientValue": {
+      "title": "Valore che Offriamo ai Pazienti:",
+      "subtitle": "Prendi il Controllo della Tua Salute",
+      "benefits": {
+        "1": "Traduttore Medico: Rende comprensibili i rapporti complessi.",
+        "2": "Sistema di Allerta Proattivo: Rileva rischi precocemente e avverte.",
+        "3": "Assistente Intelligente per Farmaci: Migliora l'aderenza al trattamento e la traccia."
+      }
+    },
+    "doctorValue": {
+      "title": "Valore che Offriamo ai Medici:",
+      "subtitle": "\"Aumenta Efficienza, Concentrati sui Pazienti\"",
+      "benefits": {
+        "1": "Riassunto Intelligente degli Appuntamenti: Entra in ogni appuntamento completamente preparato.",
+        "2": "Tracciamento Automatico del Paziente: Automatizza i processi post-esame.",
+        "3": "Assistente Virtuale: Riduci il carico amministrativo, risparmia tempo."
+      }
+    },
+    "phoneDemo": {
+      "patientWelcome": "Benvenuto, Sig. Ahmed",
+      "patientSubtitle": "I tuoi dati sanitari sono stati interpretati per te.",
+      "doctorWelcome": "Benvenuta, Dott.ssa Elif",
+      "doctorSubtitle": "Il riassunto intelligente per il tuo prossimo paziente è pronto.",
+      "nextPatient": "Prossimo Paziente: Ahmed Yılmaz",
+      "appointmentTime": "Appuntamento: 14:30 - Controllo Generale",
+      "aiAlert": "Allerta IA",
+      "creatinineAlert": "La creatinina è aumentata del 20% negli ultimi 6 mesi. La funzione renale dovrebbe essere controllata.",
+      "medicationCompliance": "Compliance ai Farmaci",
+      "complianceNote": "75% di compliance con i farmaci per la pressione sanguigna nell'ultima settimana. La bassa compliance dovrebbe essere discussa.",
+      "proactiveWarning": "Avvertimento Proattivo",
+      "creatinineIncrease": "Il tuo valore di creatinina è aumentato del 20% negli ultimi 6 mesi. Controlla i dettagli.",
+      "medicationReminder": "Promemoria Farmaco",
+      "medicationTime": "Ora di prendere il tuo farmaco per la pressione sanguigna tra 15 minuti.",
+      "upcomingAppointment": "Prossimo Appuntamento",
+      "appointmentTomorrow": "Hai un appuntamento con la Dott.ssa Elif Yılmaz domani alle 14:30."
+    }
+  },
+  "features": {
+    "sectionTitle": "Capacità della Piattaforma",
+    "title": "Ecosistema Sanitario Intelligente End-to-End",
+    "subtitle": "SacreLife offre una soluzione completa alimentata dall'IA che facilita ogni passo del viaggio del paziente e del medico.",
+    "categories": {
+      "patientSafety": "Empowerment e Sicurezza del Paziente",
+      "doctorEfficiency": "Efficienza di Medici e Cliniche",
+      "aiPower": "Potenza di IA e Dati",
+      "integrations": "Integrazioni dell'Ecosistema"
+    },
+    "items": {
+      "1": {
+        "title": "Sistema di Risposta di Emergenza Intelligente",
+        "description": "L'IA monitora dati sanitari critici e notifica istantaneamente medici, servizi di emergenza o parenti con un tocco quando si verificano anomalie."
+      },
+      "2": {
+        "title": "Generazione di Contenuti e Video Alimentata dall'IA",
+        "description": "I medici possono creare idee per articoli e video in secondi con l'IA, automatizzare i loro post sui social media."
+      },
+      "3": {
+        "title": "Accesso a Punto Singolo a Tutti i Documenti Sanitari",
+        "description": "Accedi in sicurezza a tutti i tuoi risultati di laboratorio, raggi X e rapporti da un posto. Carica facilmente i tuoi documenti passati nel sistema."
+      },
+      "4": {
+        "title": "Analisi a Due Fasi Alimentata dall'IA",
+        "description": "I medici ottengono una seconda opinione facendo interpretare i risultati di laboratorio all'IA. I dettagli che potrebbero essere persi vengono catturati, l'affidabilità diagnostica aumenta."
+      },
+      "5": {
+        "title": "Condivisione di E-Prescrizione Remota",
+        "description": "Ottieni la tua e-prescrizione istantaneamente dopo la consultazione online con il tuo medico, rinnova i tuoi farmaci senza andare in ospedale."
+      },
+      "6": {
+        "title": "Tracciamento Intelligente dei Farmaci e Feedback",
+        "description": "Ricevi promemoria agli orari dei farmaci, condividi il tuo pattern d'uso con il tuo medico. Lascia che la tua risposta al trattamento sia monitorata istantaneamente."
+      },
+      "7": {
+        "title": "Programmazione Automatica degli Appuntamenti Alimentata dall'IA",
+        "description": "I medici definiscono quote settimanali di appuntamenti e fasce orarie, l'IA riempie automaticamente il calendario nel modo più efficiente."
+      },
+      "8": {
+        "title": "Consulenza Alimentata dall'IA",
+        "description": "I pazienti possono fare domande all'IA sulle loro condizioni di salute per ottenere informazioni preliminari e orientamento. La decisione finale spetta sempre al medico."
+      },
+      "9": {
+        "title": "Comunicazione IA Approvata dal Medico",
+        "description": "I medici definiscono informazioni standard da comunicare ai pazienti nell'IA. L'IA trasmette queste informazioni ai pazienti solo con l'approvazione del medico, accelerando la comunicazione."
+      },
+      "10": {
+        "title": "Tracciamento della Soddisfazione Post-Chirurgia e Esame",
+        "description": "L'IA chiama i pazienti dopo le operazioni per misurare la loro soddisfazione, annota i reclami e trasmette immediatamente il feedback ai medici."
+      },
+      "11": {
+        "title": "Valutazione Verificata del Medico e Feedback",
+        "description": "Solo i pazienti che hanno ricevuto servizio possono valutare i medici. Questo crea un sistema di valutazione equo e affidabile."
+      },
+      "12": {
+        "title": "Informazioni IA per Pazienti Cronici",
+        "description": "La consapevolezza della gestione delle malattie è aumentata fornendo video personalizzati, articoli e guide per malattie croniche come diabete e ipertensione."
+      },
+      "13": {
+        "title": "Coaching Sanitario IA Personalizzato",
+        "description": "Offre raccomandazioni personalizzate di nutrizione, esercizio e stile di vita basate su età, storia medica e stile di vita. Ti motiva nel tuo viaggio di vita sana."
+      },
+      "14": {
+        "title": "Tracciamento Vocale e Video e Esame Remoto",
+        "description": "Conduci consultazioni sicure e di alta qualità vocali o video con il tuo medico attraverso la piattaforma."
+      },
+      "15": {
+        "title": "Tracciamento delle Scorte e Gestione del Consumo",
+        "description": "Farmaci e materiali di consumo nella clinica sono monitorati dall'IA. Quando le scorte diminuiscono, il sistema fornisce automaticamente avvisi e raccomandazioni di fornitura."
+      },
+      "16": {
+        "title": "Compatibilità Assicurativa e Informazioni di Pagamento",
+        "description": "Prima di fissare un appuntamento, scopri se il medico o il trattamento che scegli è coperto dalla tua assicurazione, evita pagamenti a sorpresa."
+      },
+      "17": {
+        "title": "Chatbot di Psicologia (Privato e Anonimo)",
+        "description": "Supporto anonimo che è con te 24/7 durante stress, ansia o depressione, ti capisce e ti indirizza a specialisti quando necessario."
+      },
+      "18": {
+        "title": "Sistema di Allerta Precoce Basato sull'IA",
+        "description": "Rileva tendenze rischiose nei tuoi dati sanitari (es. ultime 3 letture della pressione sanguigna in aumento) e avverte te e il tuo medico prima che si verifichino potenziali complicazioni."
+      },
+      "19": {
+        "title": "Assistente Intelligente con Tracciamento Appuntamenti in Diretta",
+        "description": "Il paziente vede dal vivo quante persone sono davanti e il tempo di attesa stimato. Il caos della sala d'attesa finisce."
+      },
+      "20": {
+        "title": "Pre-Informazione e Orientamento del Paziente",
+        "description": "Il paziente risponde ad alcune semplici domande sui suoi reclami prima dell'appuntamento. Il medico inizia l'esame conoscendo il paziente."
+      },
+      "21": {
+        "title": "Informazioni di Emergenza e Sicurezza",
+        "description": "Aggiungi informazioni critiche come allergie, gruppo sanguigno, stato di donazione di organi. In un'emergenza, queste informazioni possono salvare la tua vita."
+      },
+      "22": {
+        "title": "Spiegazioni di Termini Medici Alimentate dall'IA",
+        "description": "Non hai capito un termine che il tuo medico ha usato? Toccalo, lascia che l'IA te lo spieghi in un linguaggio semplice e comprensibile."
+      },
+      "23": {
+        "title": "Tracciamento della Salute Familiare (Angelo Custode Digitale)",
+        "description": "Traccia i processi di salute, l'assunzione di farmaci e gli appuntamenti dei tuoi figli o genitori anziani da un posto."
+      }
+    }
+  },
+  "roadmap": {
+    "sectionTitle": "Roadmap del Prodotto",
+    "title": "Costruire l'Ecosistema Passo dopo Passo",
+    "subtitle": "Procederemo dividendo la nostra visione in fasi gestibili e commercialmente significative.",
+    "phases": {
+      "phase1": {
+        "timeline": "Primi 12 Mesi",
+        "title": "Fase 1: NUCLEO",
+        "subtitle": "MVP e Validazione del Mercato",
+        "focus": "Focus:",
+        "description": "Stabilire il ponte di informazione e comunicazione di base tra medico e paziente.",
+        "features": {
+          "1": "Integrazione e-Nabız",
+          "2": "Riassunto Intelligente degli Appuntamenti",
+          "3": "Tele-Consulenza"
+        }
+      },
+      "phase2": {
+        "timeline": "12-24 Mesi",
+        "title": "Fase 2: PIATTAFORMA",
+        "subtitle": "Espansione dell'Ecosistema",
+        "focus": "Focus:",
+        "description": "Diversificare il modello di ricavi e rendere la piattaforma indispensabile.",
+        "features": {
+          "1": "Pannello di Gestione della Clinica",
+          "2": "Integrazioni Assicurative",
+          "3": "Modulo Salute Familiare"
+        }
+      },
+      "phase3": {
+        "timeline": "24+ Mesi",
+        "title": "Fase 3: INTELLIGENZA",
+        "subtitle": "Approfondimento e Leadership",
+        "focus": "Focus:",
+        "description": "Impostare standard di mercato attraverso la leadership dei dati.",
+        "features": {
+          "1": "Coaching Sanitario IA Personalizzato",
+          "2": "Analisi Dati Anonimi",
+          "3": "Integrazione Tecnologia Indossabile"
+        }
+      }
+    }
+  },
+  "competition": {
+    "sectionTitle": "Vantaggio Competitivo",
+    "title": "Perché Vinceremo?",
+    "subtitle": "Il mercato è affollato, ma stiamo giocando un gioco diverso. I nostri concorrenti sono troppo generali o troppo di nicchia. Noi combiniamo il meglio di entrambi.",
+    "comparisonTable": {
+      "feature": "Caratteristica",
+      "sacrelife": "SacreLife",
+      "enabiz": "e-Nabız",
+      "global": "Concorrenti Globali (Kry, Ada)",
+      "local": "Siti di Appuntamenti Locali",
+      "features": {
+        "aiInsights": "Intuizioni Personali Alimentate dall'IA",
+        "enabizIntegration": "Integrazione e-Nabız",
+        "clinicTools": "Strumenti di Gestione Clinica (B2B SaaS)",
+        "endToEnd": "Gestione Sanitaria End-to-End"
+      }
+    },
+    "moats": {
+      "title": "I Nostri \"Fossati del Castello\" Difendibili",
+      "items": {
+        "1": {
+          "title": "Dati Proprietari e IA",
+          "description": "Modelli IA non copiabili addestrati con dataset specifici della Turchia."
+        },
+        "2": {
+          "title": "Effetti di Rete",
+          "description": "Con il nostro modello B2B2C, ogni nuovo medico e paziente rende la piattaforma più preziosa per tutti."
+        },
+        "3": {
+          "title": "Integrazione Profonda",
+          "description": "Diventare uno strumento indispensabile integrando sia con l'infrastruttura e-Nabız che con i flussi di lavoro clinici."
+        }
+      }
+    }
+  },
+  "market": {
+    "sectionTitle": "Strategia",
+    "title": "Opportunità di Mercato",
+    "subtitle": "Opportunità significativa nel mercato crescente della tecnologia sanitaria.",
+    "opportunity": {
+      "title": "Opportunità di Mercato",
+      "items": {
+        "1": {
+          "title": "Dimensione del Mercato: $500B+",
+          "description": "Opportunità significativa nel mercato crescente della tecnologia sanitaria."
+        },
+        "2": {
+          "title": "Crescita Annuale: 15%",
+          "description": "Mercato dinamico con 15% di crescita annuale."
+        },
+        "3": {
+          "title": "Focalizzato sulla Tecnologia",
+          "description": "Vantaggio competitivo con IA e analisi dei dati."
+        }
+      }
+    },
+    "revenueStreams": {
+      "title": "I Nostri Flussi di Ricavi",
+      "items": {
+        "b2bSaas": {
+          "title": "B2B SaaS - SacreLife Pro (Ricavi Principali)",
+          "description": "Pacchetti di abbonamento mensile/annuale per cliniche e medici.",
+          "packages": {
+            "basic": "Pacchetto Base",
+            "pro": "Pacchetto Pro (Raccomandato)",
+            "enterprise": "Pacchetto Enterprise"
+          }
+        },
+        "b2b2c": {
+          "title": "B2B2C - Basato sull'Uso (Motore di Crescita)",
+          "description": "15% di commissione dalle sessioni di tele-consulenza condotte sulla piattaforma."
+        },
+        "corporate": {
+          "title": "Pacchetti Sanitari Aziendali",
+          "description": "Licenza annuale per aziende che vogliono fornire benefici sanitari moderni ai loro dipendenti."
+        }
+      }
+    }
+  },
+  "financials": {
+    "sectionTitle": "Finanziari",
+    "title": "Obiettivi di Crescita e Redditività a 3 Anni",
+    "subtitle": "Obiettivi ambiziosi ma raggiungibili basati su assunzioni realistiche.",
+    "chart": {
+      "yearlyRevenue": "Ricavi Ricorrenti Annuali (ARR)",
+      "year1": "Anno 1",
+      "year2": "Anno 2",
+      "year3": "Anno 3",
+      "year1Clinics": "Anno 1 - Cliniche Paganti",
+      "year2Clinics": "Anno 2 - Cliniche Paganti",
+      "year3Clinics": "Anno 3 - Cliniche Paganti",
+      "year3Revenue": "Anno 3 - Ricavi Ricorrenti Annuali (ARR)",
+      "million": "Milione",
+      "fundUsageLabel": "Distribuzione dell'Uso dei Fondi"
+    },
+    "investment": {
+      "sectionTitle": "Richiesta di Investimento",
+      "title": "Capitale Strategico per Trasformare la Visione in Realtà",
+      "seedRound": "Richiesta Round di Investimento Seed",
+      "equity": "Equity Offerta",
+      "valuation": "Valutazione Post-Money",
+      "description": "Questo investimento fornirà 24 mesi di potenza operativa, portandoci alla leadership del mercato.",
+      "fundUsage": {
+        "title": "Uso dei Fondi",
+        "distribution": "Distribuzione",
+        "product": "Prodotto e Tecnologia",
+        "sales": "Vendite e Marketing",
+        "operations": "Operazioni e Riserva"
+      }
+    }
+  },
+  "team": {
+    "sectionTitle": "Team",
+    "title": "La Forza che Trasformerà Questa Visione in Realtà",
+    "subtitle": "Team fondatore esperto, appassionato e dedicato in tecnologia, sanità e sviluppo business.",
+    "members": {
+      "ceo": {
+        "name": "Il Tuo Nome Cognome",
+        "role": "Fondatore e CEO",
+        "description": "10+ anni di esperienza in tecnologie sanitarie e gestione strategica. Ha venduto con successo la startup precedente."
+      },
+      "cto": {
+        "name": "Nome Cognome",
+        "role": "Fondatore e CTO",
+        "description": "Esperto in IA e architetture di big data. Ha ricoperto ruoli di leadership in aziende tecnologiche leader."
+      },
+      "cmo": {
+        "name": "Nome Cognome",
+        "role": "Fondatore e CMO",
+        "description": "Successo provato nel marketing digitale e strategie di crescita B2B SaaS. Specialista di ingresso nel mercato."
+      }
+    }
+  },
+  "whyNow": {
+    "sectionTitle": "Perché Ora?",
+    "title": "Momento Giusto, Mercato Giusto: Rivoluzione Sanitaria Inevitabile della Turchia",
+    "subtitle": "Tre onde maggiori e irreversibili stanno accadendo simultaneamente nel settore sanitario. SacreLife è nato all'intersezione di questi mega trend.",
+    "trends": {
+      "dataExplosion": {
+        "title": "Esplosione di Dati",
+        "description": "Con e-Nabız, i dati di 78+ milioni di cittadini sono stati digitalizzati. Questo è un tesoro di dati enorme in attesa di essere elaborato."
+      },
+      "aiMaturity": {
+        "title": "Maturità dell'IA",
+        "description": "L'IA è ora una potenza analitica provata che può produrre risultati significativi dai dati medici."
+      },
+      "behavioralChange": {
+        "title": "Cambiamento Comportamentale",
+        "description": "Post-pandemia, sia pazienti che medici hanno adottato strumenti sanitari digitali e questa abitudine è diventata permanente."
+      }
+    }
+  },
+  "investment": {
+    "sectionTitle": "Richiesta di Investimento",
+    "title": "Unisciti al Futuro della Sanità",
+    "subtitle": "Fai Parte della Rivoluzione Sanitaria",
+    "description": "Partner non solo con un'app, ma con un ecosistema scalabile e redditizio che tocca sia vite umane che capitale.",
+    "cta": "Contattaci",
+    "finalCta": "Investi nel Futuro dell'Infrastruttura Sanitaria."
+  },
+  "footer": {
+    "copyright": "2025 SacreLife Inc. Tutti i diritti riservati.",
+    "privacy": "Politica sulla Privacy",
+    "terms": "Termini di Servizio"
+  },
+  "contact": {
+    "title": "Relazioni con gli Investitori",
+    "description": "Contattaci per informazioni dettagliate e richieste di incontro.",
+    "name": "Il Tuo Nome Cognome",
+    "email": "Il Tuo Indirizzo Email",
+    "message": "Il Tuo Messaggio",
+    "send": "Invia",
+    "success": "Il tuo messaggio è stato inviato con successo. Ti contatteremo il prima possibile.",
+    "close": "Chiudi"
+  },
+  "investmentModal": {
+    "title": "Sanità Digitale: Un Mercato Pronto ad Esplodere",
+    "subtitle": "I numeri dicono perché dovresti investire ora.",
+    "close": "Chiudi",
+    "globalMarket": "Mercato Globale della Sanità Digitale",
+    "aiMarket": "Mercato dell'IA nella Sanità",
+    "growthTitle": "Perché Questa Crescita è Inevitabile?",
+    "chronicDiseases": "Malattie Croniche in Aumento: La popolazione che invecchia a livello mondiale aumenta la domanda di soluzioni che richiedono monitoraggio continuo e gestione proattiva.",
+    "consumerDemand": "Domanda dei Consumatori: I pazienti ora vogliono assumere un ruolo più attivo nei loro percorsi sanitari, accedere ai loro dati e richiedere servizi personalizzati.",
+    "costPressure": "Pressione sui Costi: I sistemi sanitari devono ridurre i costi aumentando l'efficienza con IA e automazione e promuovendo cure preventive.",
+    "readyQuestion": "Sei pronto a far parte di questa rivoluzione?",
+    "contactButton": "Discutiamo nei Dettagli"
+  }
+} 

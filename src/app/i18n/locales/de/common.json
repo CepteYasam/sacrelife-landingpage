@@ -1,0 +1,480 @@
+{
+  "header": {
+    "navigation": {
+      "problem": "Problem",
+      "solution": "Lösung", 
+      "features": "Funktionen",
+      "roadmap": "Roadmap",
+      "market": "Markt",
+      "competition": "Wettbewerb",
+      "financials": "Finanzen",
+      "team": "Team",
+      "investment": "Investieren"
+    },
+    "buttons": {
+      "investNow": "Jetzt Investieren",
+      "changeLanguage": "Sprache Ändern",
+      "toggleTheme": "Dunklen Modus Umschalten",
+      "openMenu": "Menü Öffnen"
+    },
+    "languages": {
+      "turkish": "Türkçe",
+      "english": "English",
+      "spanish": "Español",
+      "french": "Français",
+      "german": "Deutsch",
+      "italian": "Italiano",
+      "portuguese": "Português",
+      "russian": "Русский",
+      "arabic": "العربية"
+    }
+  },
+  "hero": {
+    "mainTitle": "Türkische Gesundheitsdaten",
+    "subtitle": "Intelligentes Ökosystem das Sie Bedeutsam Macht",
+    "description": "SacreLife ist eine KI-gestützte Gesundheitsrevolution, die verstreute Gesundheitsdaten in bedeutsame Erkenntnisse und proaktive Maßnahmen für Patienten und Ärzte verwandelt.",
+    "buttons": {
+      "investmentOpportunity": "Investitionsmöglichkeit Entdecken",
+      "seeFeatures": "Funktionen Ansehen"
+    }
+  },
+  "problem": {
+    "sectionTitle": "Probleme Die Wir Lösen",
+    "title": "10 Große Grundlegende Ineffizienzen des Gesundheitssystems",
+    "subtitle": "SacreLife beseitigt mit künstlicher Intelligenz die Kommunikations-, Verfolgungs- und Verwaltungsprobleme im Kern des Systems, denen Patienten und Ärzte täglich begegnen.",
+    "problems": {
+      "1": {
+        "title": "Kommunikationslücke und Informationsverwirrung",
+        "description": "Patienten verstehen die von Ärzten verwendeten medizinischen Begriffe nicht; sie können den Behandlungsprozess nicht vollständig erfassen, was zu Vertrauensproblemen führt.",
+        "solution": "KI erklärt jeden medizinischen Begriff in einfacher, verständlicher Sprache. Patienten verstehen klar, was sie erleben und was sie tun müssen."
+      },
+      "2": {
+        "title": "Späte Intervention und Vermeidbare Komplikationen",
+        "description": "Chronische Werte wie Blutdruck und Glukose werden von Patienten nicht regelmäßig überwacht, daher nicht bemerkt bis sie gefährliche Werte erreichen.",
+        "solution": "KI analysiert kontinuierlich Daten und verwendet ein 'Frühwarnsystem', um Patienten und Ärzte über riskante Situationen zu benachrichtigen und präventive Gesundheitsversorgung zu aktivieren."
+      },
+      "3": {
+        "title": "Vergessen oder Unregelmäßige Medikamenteneinnahme",
+        "description": "Patienten vergessen, Medikamente rechtzeitig einzunehmen, was die Behandlungseffektivität reduziert, und Ärzte sind sich dieser Situation nicht bewusst.",
+        "solution": "Intelligente Erinnerungen werden gesendet, Patienten markieren 'genommen' in der App. Ärzte können die Nutzungshistorie in Echtzeit sehen, um die Behandlung zu optimieren."
+      },
+      "4": {
+        "title": "Wartezeiten und Terminchaos",
+        "description": "Patienten kommen früh ins Krankenhaus, warten lange Zeiträume und verbringen Zeit ineffizient. Dies reduziert die Patientenzufriedenheit.",
+        "solution": "KI zeigt Patienten live die Anzahl wartender Personen und geschätzte Wartezeit. Patienten planen ihre Zeit effizient."
+      },
+      "5": {
+        "title": "Mangel an Patientenspezifischen Behandlungsinformationen",
+        "description": "Patienten können nicht auf ausreichende und zuverlässige Informationen über ihre Krankheit und wie man damit lebt zugreifen, verlieren sich in Internet-Fehlinformationen.",
+        "solution": "KI bietet verifizierte und personalisierte Bildungsinhalte (Artikel, Videos, Leitfäden) spezifisch für die chronischen Bedingungen der Patienten."
+      },
+      "6": {
+        "title": "Mangelnde Vorbereitung vor Terminen",
+        "description": "Ärzte beginnen Besprechungen ohne den Patienten zu kennen; wertvolle Untersuchungszeit wird damit verbracht, die Patientengeschichte zu lernen, was den Prozess verlängert.",
+        "solution": "Patienten beantworten kurze Fragen vor Terminen, diese Informationen werden an Ärzte weitergeleitet. Untersuchungen werden vorbereiteter, schneller und effizienter."
+      },
+      "7": {
+        "title": "Unfähigkeit den Gesundheitszustand von Angehörigen zu Überwachen",
+        "description": "Der Gesundheitszustand älterer oder kindlicher Personen (Medikamenteneinnahme, Termine) kann nicht effektiv aus der Ferne von Familienmitgliedern überwacht werden.",
+        "solution": "Die App ermöglicht die Überwachung der Gesundheitsprozesse von Angehörigen. Funktioniert wie ein 'digitaler Schutzengel' und bietet familienweite Sicherheit."
+      },
+      "8": {
+        "title": "Kommunikationsbelastung und Burnout der Ärzte",
+        "description": "Ärzte können keine Eins-zu-Eins-Kommunikation mit jedem Patienten aufrechterhalten und Standardinformationen im geschäftigen Patientenfluss wiederholen.",
+        "solution": "Ärzte definieren Standardnachrichten, die sie von der KI an Patienten kommunizieren lassen möchten; das System übermittelt dies automatisch und reduziert die Belastung des Arztes."
+      },
+      "9": {
+        "title": "Material- und Bestandsmangel",
+        "description": "Medikamente oder Verbrauchsmaterialien in Kliniken können ungeplant ausgehen und Serviceunterbrechungen verursachen.",
+        "solution": "KI überwacht die Bestandsnutzung, bietet automatische Warnungen und Versorgungsempfehlungen für schwindende Produkte, erhöht die operative Effizienz der Klinik."
+      },
+      "10": {
+        "title": "Unerreichbares Feedback",
+        "description": "Patientenzufriedenheit oder Beschwerden erreichen oft nicht die Ärzte, was ein Hindernis für die Verbesserung der Servicequalität ist.",
+        "solution": "KI misst die Patientenzufriedenheit nach Untersuchungen oder Operationen, übermittelt Probleme an Ärzte und initiiert bei Bedarf Nachfolgeprozesse."
+      }
+    },
+    "solutionLabel": "SacreLife Lösung:"
+  },
+  "solution": {
+    "sectionTitle": "Unsere Lösung",
+    "title": "Plattform die e-Nabız Intelligent Macht",
+    "subtitle": "SacreLife ist kein Konkurrent von e-Nabız, sondern eine ergänzende 'intelligente Schicht'. Wir verwandeln verstreute Daten in lebensrettende Erkenntnisse.",
+    "tabs": {
+      "patient": "Für Patienten",
+      "doctor": "Für Ärzte"
+    },
+    "patientValue": {
+      "title": "Wert den Wir Patienten Bieten:",
+      "subtitle": "Übernehmen Sie die Kontrolle über Ihre Gesundheit",
+      "benefits": {
+        "1": "Medizinischer Übersetzer: Macht komplexe Berichte verständlich.",
+        "2": "Proaktives Warnsystem: Erkennt Risiken früh und warnt.",
+        "3": "Intelligenter Medikamentenassistent: Verbessert Behandlungsadhärenz und verfolgt sie."
+      }
+    },
+    "doctorValue": {
+      "title": "Wert den Wir Ärzten Bieten:",
+      "subtitle": "Steigern Sie Effizienz, Fokussieren Sie auf Patienten",
+      "benefits": {
+        "1": "Intelligente Terminzusammenfassung: Gehen Sie zu jedem Termin vollständig vorbereitet.",
+        "2": "Automatische Patientenverfolgung: Automatisieren Sie Post-Untersuchungsprozesse.",
+        "3": "Virtueller Assistent: Reduzieren Sie administrative Belastung, sparen Sie Zeit."
+      }
+    },
+    "phoneDemo": {
+      "patientWelcome": "Willkommen, Herr Ahmed",
+      "patientSubtitle": "Ihre Gesundheitsdaten wurden für Sie interpretiert.",
+      "doctorWelcome": "Willkommen, Dr. Elif",
+      "doctorSubtitle": "Die intelligente Zusammenfassung für Ihren nächsten Patienten ist bereit.",
+      "nextPatient": "Nächster Patient: Ahmed Yılmaz",
+      "appointmentTime": "Termin: 14:30 - Allgemeine Kontrolle",
+      "aiAlert": "KI-Warnung",
+      "creatinineAlert": "Kreatinin hat in den letzten 6 Monaten um 20% zugenommen. Nierenfunktion sollte überprüft werden.",
+      "medicationCompliance": "Medikamenten-Compliance",
+      "complianceNote": "75% Compliance mit Blutdruckmedikamenten in der letzten Woche. Geringe Compliance sollte besprochen werden.",
+      "proactiveWarning": "Proaktive Warnung",
+      "creatinineIncrease": "Ihr Kreatininwert hat in den letzten 6 Monaten um 20% zugenommen. Details überprüfen.",
+      "medicationReminder": "Medikamentenerinnerung",
+      "medicationTime": "Zeit, Ihr Blutdruckmedikament in 15 Minuten einzunehmen.",
+      "upcomingAppointment": "Anstehender Termin",
+      "appointmentTomorrow": "Sie haben morgen um 14:30 einen Termin mit Dr. Elif Yılmaz."
+    }
+  },
+  "features": {
+    "sectionTitle": "Plattform-Fähigkeiten",
+    "title": "End-to-End Intelligentes Gesundheitsökosystem",
+    "subtitle": "SacreLife bietet eine umfassende, KI-gestützte Lösung, die jeden Schritt der Patienten- und Arztreise erleichtert.",
+    "categories": {
+      "patientSafety": "Patientenermächtigung und Sicherheit",
+      "doctorEfficiency": "Arzt- und Klinikeffizienz",
+      "aiPower": "KI- und Datenmacht",
+      "integrations": "Ökosystem-Integrationen"
+    },
+    "items": {
+      "1": {
+        "title": "Intelligentes Notfallreaktionssystem",
+        "description": "KI überwacht kritische Gesundheitsdaten und benachrichtigt sofort Ärzte, Notdienste oder Angehörige mit einem Klick, wenn Anomalien auftreten."
+      },
+      "2": {
+        "title": "KI-gestützte Inhalts- und Videogenerierung",
+        "description": "Ärzte können Artikel- und Videoideen in Sekunden mit KI erstellen, ihre Social-Media-Posts automatisieren."
+      },
+      "3": {
+        "title": "Einzelner Zugriffspunkt auf Alle Gesundheitsdokumente",
+        "description": "Greifen Sie sicher auf alle Ihre Laborbefunde, Röntgenbilder und Berichte von einem Ort aus zu. Laden Sie Ihre vergangenen Dokumente einfach ins System hoch."
+      },
+      "4": {
+        "title": "KI-gestützte Zweistufige Analyse",
+        "description": "Ärzte erhalten eine zweite Meinung, indem sie KI Laborbefunde interpretieren lassen. Details, die übersehen werden könnten, werden erfasst, diagnostische Zuverlässigkeit steigt."
+      },
+      "5": {
+        "title": "Remote E-Rezept-Sharing",
+        "description": "Erhalten Sie Ihr E-Rezept sofort nach Online-Konsultation mit Ihrem Arzt, erneuern Sie Ihre Medikamente ohne ins Krankenhaus zu gehen."
+      },
+      "6": {
+        "title": "Intelligente Medikamentenverfolgung und Feedback",
+        "description": "Erhalten Sie Erinnerungen zu Medikamentenzeiten, teilen Sie Ihr Nutzungsmuster mit Ihrem Arzt. Lassen Sie Ihre Behandlungsreaktion sofort überwachen."
+      },
+      "7": {
+        "title": "KI-gestützte Automatische Terminplanung",
+        "description": "Ärzte definieren wöchentliche Terminkontingente und Zeitfenster, KI füllt den Kalender automatisch am effizientesten."
+      },
+      "8": {
+        "title": "KI-gestützte Beratung",
+        "description": "Patienten können der KI Fragen zu ihren Gesundheitszuständen stellen, um vorläufige Informationen und Orientierung zu erhalten. Die endgültige Entscheidung liegt immer beim Arzt."
+      },
+      "9": {
+        "title": "Arztgenehmigte KI-Kommunikation",
+        "description": "Ärzte definieren Standardinformationen, die in der KI an Patienten kommuniziert werden sollen. KI übermittelt diese Informationen nur mit Arztgenehmigung an Patienten und beschleunigt die Kommunikation."
+      },
+      "10": {
+        "title": "Post-Operation und Untersuchungs-Zufriedenheitsverfolgung",
+        "description": "KI ruft Patienten nach Operationen an, um ihre Zufriedenheit zu messen, notiert Beschwerden und übermittelt sofort Feedback an Ärzte."
+      },
+      "11": {
+        "title": "Verifizierte Arztbewertung und Feedback",
+        "description": "Nur Patienten, die Service erhalten haben, können Ärzte bewerten. Dies schafft ein faires und zuverlässiges Bewertungssystem."
+      },
+      "12": {
+        "title": "KI-Information für Chronische Patienten",
+        "description": "Krankheitsmanagement-Bewusstsein wird durch personalisierte Videos, Artikel und Leitfäden für chronische Krankheiten wie Diabetes und Bluthochdruck erhöht."
+      },
+      "13": {
+        "title": "Personalisiertes KI-Gesundheitscoaching",
+        "description": "Bietet personalisierte Ernährungs-, Bewegungs- und Lebensstilempfehlungen basierend auf Alter, Krankengeschichte und Lebensstil. Motiviert Sie auf Ihrer gesunden Lebensreise."
+      },
+      "14": {
+        "title": "Sprach- und Video-Verfolgung & Remote-Untersuchung",
+        "description": "Führen Sie sichere und hochwertige Sprach- oder Videokonsultationen mit Ihrem Arzt über die Plattform durch."
+      },
+      "15": {
+        "title": "Bestandsverfolgung und Verbrauchsmanagement",
+        "description": "Medikamente und Verbrauchsmaterialien in der Klinik werden von KI überwacht. Wenn der Bestand abnimmt, bietet das System automatisch Warnungen und Versorgungsempfehlungen."
+      },
+      "16": {
+        "title": "Versicherungskompatibilität und Zahlungsinformation",
+        "description": "Bevor Sie einen Termin machen, erfahren Sie, ob der Arzt oder die Behandlung, die Sie wählen, von Ihrer Versicherung abgedeckt ist, vermeiden Sie Überraschungszahlungen."
+      },
+      "17": {
+        "title": "Psychologie-Chatbot (Privat und Anonym)",
+        "description": "Anonyme Unterstützung, die 24/7 bei Stress, Angst oder Depression bei Ihnen ist, Sie versteht und Sie bei Bedarf an Spezialisten verweist."
+      },
+      "18": {
+        "title": "KI-basiertes Frühwarnsystem",
+        "description": "Erkennt riskante Trends in Ihren Gesundheitsdaten (z.B. letzte 3 Blutdruckmessungen steigen) und warnt Sie und Ihren Arzt, bevor potenzielle Komplikationen auftreten."
+      },
+      "19": {
+        "title": "Intelligenter Assistent mit Live-Terminverfolgung",
+        "description": "Patient sieht live, wie viele Personen vor ihm sind und geschätzte Wartezeit. Wartezimmer-Chaos endet."
+      },
+      "20": {
+        "title": "Patienten-Vorinformation und Orientierung",
+        "description": "Patient beantwortet einige einfache Fragen zu seinen Beschwerden vor dem Termin. Arzt beginnt Untersuchung mit Kenntnis des Patienten."
+      },
+      "21": {
+        "title": "Notfallinformation und Sicherheit",
+        "description": "Fügen Sie kritische Informationen wie Allergien, Blutgruppe, Organspendestatus hinzu. In einem Notfall können diese Informationen Ihr Leben retten."
+      },
+      "22": {
+        "title": "KI-gestützte Medizinische Begriffserklärungen",
+        "description": "Haben Sie einen Begriff nicht verstanden, den Ihr Arzt verwendet hat? Berühren Sie ihn, lassen Sie die KI ihn Ihnen in einfacher und verständlicher Sprache erklären."
+      },
+      "23": {
+        "title": "Familiengesundheitsverfolgung (Digitaler Schutzengel)",
+        "description": "Verfolgen Sie die Gesundheitsprozesse, Medikamenteneinnahme und Termine Ihrer Kinder oder älteren Eltern von einem Ort aus."
+      }
+    }
+  },
+  "roadmap": {
+    "sectionTitle": "Produkt-Roadmap",
+    "title": "Aufbau des Ökosystems Schritt für Schritt",
+    "subtitle": "Wir werden voranschreiten, indem wir unsere Vision in handhabbare und kommerziell bedeutsame Phasen unterteilen.",
+    "phases": {
+      "phase1": {
+        "timeline": "Erste 12 Monate",
+        "title": "Phase 1: KERN",
+        "subtitle": "MVP & Marktvalidierung",
+        "focus": "Fokus:",
+        "description": "Die grundlegende Informations- und Kommunikationsbrücke zwischen Arzt und Patient etablieren.",
+        "features": {
+          "1": "e-Nabız Integration",
+          "2": "Intelligente Terminzusammenfassung",
+          "3": "Tele-Konsultation"
+        }
+      },
+      "phase2": {
+        "timeline": "12-24 Monate",
+        "title": "Phase 2: PLATTFORM",
+        "subtitle": "Ökosystem-Erweiterung",
+        "focus": "Fokus:",
+        "description": "Das Umsatzmodell diversifizieren und die Plattform unverzichtbar machen.",
+        "features": {
+          "1": "Klinik-Management-Panel",
+          "2": "Versicherungsintegrationen",
+          "3": "Familiengesundheitsmodul"
+        }
+      },
+      "phase3": {
+        "timeline": "24+ Monate",
+        "title": "Phase 3: INTELLIGENZ",
+        "subtitle": "Vertiefung und Führung",
+        "focus": "Fokus:",
+        "description": "Marktstandards durch Datenführung setzen.",
+        "features": {
+          "1": "Personalisiertes KI-Gesundheitscoaching",
+          "2": "Anonyme Datenanalytik",
+          "3": "Wearable-Technologie-Integration"
+        }
+      }
+    }
+  },
+  "competition": {
+    "sectionTitle": "Wettbewerbsvorteil",
+    "title": "Warum Werden Wir Gewinnen?",
+    "subtitle": "Der Markt ist überfüllt, aber wir spielen ein anderes Spiel. Unsere Konkurrenten sind entweder zu allgemein oder zu nischig. Wir kombinieren das Beste von beiden.",
+    "comparisonTable": {
+      "feature": "Funktion",
+      "sacrelife": "SacreLife",
+      "enabiz": "e-Nabız",
+      "global": "Globale Konkurrenten (Kry, Ada)",
+      "local": "Lokale Terminseiten",
+      "features": {
+        "aiInsights": "KI-gestützte Persönliche Erkenntnisse",
+        "enabizIntegration": "e-Nabız Integration",
+        "clinicTools": "Klinik-Management-Tools (B2B SaaS)",
+        "endToEnd": "End-to-End Gesundheitsmanagement"
+      }
+    },
+    "moats": {
+      "title": "Unsere Verteidigbaren \"Burggräben\"",
+      "items": {
+        "1": {
+          "title": "Proprietäre Daten & KI",
+          "description": "Unkopierbare KI-Modelle, trainiert mit türkeisspezifischen Datensätzen."
+        },
+        "2": {
+          "title": "Netzwerkeffekte",
+          "description": "Mit unserem B2B2C-Modell macht jeder neue Arzt und Patient die Plattform für alle wertvoller."
+        },
+        "3": {
+          "title": "Tiefe Integration",
+          "description": "Ein unverzichtbares Werkzeug werden, indem sowohl in die e-Nabız-Infrastruktur als auch in klinische Arbeitsabläufe integriert wird."
+        }
+      }
+    }
+  },
+  "market": {
+    "sectionTitle": "Strategie",
+    "title": "Marktchance",
+    "subtitle": "Bedeutende Chance im wachsenden Gesundheitstechnologiemarkt.",
+    "opportunity": {
+      "title": "Marktchance",
+      "items": {
+        "1": {
+          "title": "Marktgröße: 500B$+",
+          "description": "Bedeutende Chance im wachsenden Gesundheitstechnologiemarkt."
+        },
+        "2": {
+          "title": "Jährliches Wachstum: 15%",
+          "description": "Dynamischer Markt mit 15% jährlichem Wachstum."
+        },
+        "3": {
+          "title": "Technologiefokussiert",
+          "description": "Wettbewerbsvorteil mit KI und Datenanalytik."
+        }
+      }
+    },
+    "revenueStreams": {
+      "title": "Unsere Umsatzströme",
+      "items": {
+        "b2bSaas": {
+          "title": "B2B SaaS - SacreLife Pro (Hauptumsatz)",
+          "description": "Monatliche/jährliche Abonnementpakete für Kliniken und Ärzte.",
+          "packages": {
+            "basic": "Basispaket",
+            "pro": "Pro-Paket (Empfohlen)",
+            "enterprise": "Enterprise-Paket"
+          }
+        },
+        "b2b2c": {
+          "title": "B2B2C - Nutzungsbasiert (Wachstumsmotor)",
+          "description": "15% Provision von Tele-Konsultationssitzungen, die auf der Plattform durchgeführt werden."
+        },
+        "corporate": {
+          "title": "Unternehmens-Gesundheitspakete",
+          "description": "Jährliche Lizenzierung für Unternehmen, die ihren Mitarbeitern moderne Gesundheitsvorteile bieten möchten."
+        }
+      }
+    }
+  },
+  "financials": {
+    "sectionTitle": "Finanzen",
+    "title": "3-Jahres-Wachstums- und Rentabilitätsziele",
+    "subtitle": "Ehrgeizige aber erreichbare Ziele basierend auf realistischen Annahmen.",
+    "chart": {
+      "yearlyRevenue": "Jährlich Wiederkehrende Umsätze (ARR)",
+      "year1": "Jahr 1",
+      "year2": "Jahr 2",
+      "year3": "Jahr 3",
+      "year1Clinics": "Jahr 1 - Bezahlte Kliniken",
+      "year2Clinics": "Jahr 2 - Bezahlte Kliniken",
+      "year3Clinics": "Jahr 3 - Bezahlte Kliniken",
+      "year3Revenue": "Jahr 3 - Jährlich Wiederkehrende Umsätze (ARR)",
+      "million": "Million",
+      "fundUsageLabel": "Fondsverwendungsverteilung"
+    },
+    "investment": {
+      "sectionTitle": "Investitionsanfrage",
+      "title": "Strategisches Kapital um Vision in Realität zu Verwandeln",
+      "seedRound": "Seed-Investitionsrunden-Anfrage",
+      "equity": "Angebotene Beteiligung",
+      "valuation": "Post-Money-Bewertung",
+      "description": "Diese Investition wird 24 Monate operative Kraft liefern und uns zur Marktführung bringen.",
+      "fundUsage": {
+        "title": "Fondsverwendung",
+        "distribution": "Verteilung",
+        "product": "Produkt & Technologie",
+        "sales": "Vertrieb & Marketing",
+        "operations": "Betrieb & Reserve"
+      }
+    }
+  },
+  "team": {
+    "sectionTitle": "Team",
+    "title": "Die Kraft die Diese Vision in Realität Verwandeln Wird",
+    "subtitle": "Erfahrenes, leidenschaftliches und engagiertes Gründerteam in Technologie, Gesundheit und Geschäftsentwicklung.",
+    "members": {
+      "ceo": {
+        "name": "Ihr Name Nachname",
+        "role": "Gründer & CEO",
+        "description": "10+ Jahre Erfahrung in Gesundheitstechnologien und strategischem Management. Hat erfolgreich vorheriges Startup verkauft."
+      },
+      "cto": {
+        "name": "Name Nachname",
+        "role": "Gründer & CTO",
+        "description": "Experte in KI und Big-Data-Architekturen. Hatte Führungsrollen in führenden Technologieunternehmen."
+      },
+      "cmo": {
+        "name": "Name Nachname",
+        "role": "Gründer & CMO",
+        "description": "Bewiesener Erfolg in digitalem Marketing und B2B SaaS-Wachstumsstrategien. Markteintrittspezialist."
+      }
+    }
+  },
+  "whyNow": {
+    "sectionTitle": "Warum Jetzt?",
+    "title": "Richtige Zeit, Richtiger Markt: Türkisches Unvermeidliche Gesundheitsrevolution",
+    "subtitle": "Drei große und irreversible Wellen passieren gleichzeitig im Gesundheitssektor. SacreLife wurde an der Kreuzung dieser Mega-Trends geboren.",
+    "trends": {
+      "dataExplosion": {
+        "title": "Datenexplosion",
+        "description": "Mit e-Nabız wurden Daten von 78+ Millionen Bürgern digitalisiert. Dies ist ein riesiger Datenschatz, der darauf wartet, verarbeitet zu werden."
+      },
+      "aiMaturity": {
+        "title": "KI-Reife",
+        "description": "KI ist jetzt eine bewiesene analytische Kraft, die bedeutsame Ergebnisse aus medizinischen Daten produzieren kann."
+      },
+      "behavioralChange": {
+        "title": "Verhaltensänderung",
+        "description": "Post-pandemisch haben sowohl Patienten als auch Ärzte digitale Gesundheitswerkzeuge angenommen und diese Gewohnheit ist dauerhaft geworden."
+      }
+    }
+  },
+  "investment": {
+    "sectionTitle": "Investitionsanfrage",
+    "title": "Treten Sie der Zukunft der Gesundheit Bei",
+    "subtitle": "Seien Sie Teil der Gesundheitsrevolution",
+    "description": "Partner nicht nur mit einer App, sondern mit einem skalierbaren und profitablen Ökosystem, das sowohl menschliche Leben als auch Kapital berührt.",
+    "cta": "Kontaktieren Sie Uns",
+    "finalCta": "Investieren Sie in die Zukunft der Gesundheitsinfrastruktur."
+  },
+  "footer": {
+    "copyright": "2025 SacreLife Inc. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen"
+  },
+  "contact": {
+    "title": "Investorenbeziehungen",
+    "description": "Kontaktieren Sie uns für detaillierte Informationen und Besprechungsanfragen.",
+    "name": "Ihr Name Nachname",
+    "email": "Ihre E-Mail-Adresse",
+    "message": "Ihre Nachricht",
+    "send": "Senden",
+    "success": "Ihre Nachricht wurde erfolgreich gesendet. Wir werden Sie so schnell wie möglich kontaktieren.",
+    "close": "Schließen"
+  },
+  "investmentModal": {
+    "title": "Digitale Gesundheit: Ein Markt Bereit zu Explodieren",
+    "subtitle": "Die Zahlen sagen, warum Sie jetzt investieren sollten.",
+    "close": "Schließen",
+    "globalMarket": "Globaler Digitaler Gesundheitsmarkt",
+    "aiMarket": "KI im Gesundheitsmarkt",
+    "growthTitle": "Warum ist Dieses Wachstum Unvermeidlich?",
+    "chronicDiseases": "Steigende Chronische Krankheiten: Die alternde Bevölkerung weltweit erhöht die Nachfrage nach Lösungen, die kontinuierliche Überwachung und proaktives Management erfordern.",
+    "consumerDemand": "Verbrauchernachfrage: Patienten wollen jetzt eine aktivere Rolle in ihren Gesundheitsreisen übernehmen, auf ihre Daten zugreifen und personalisierte Dienstleistungen fordern.",
+    "costPressure": "Kostendruck: Gesundheitssysteme müssen Kosten reduzieren, indem sie Effizienz mit KI und Automatisierung steigern und präventive Pflege fördern.",
+    "readyQuestion": "Sind Sie bereit, Teil dieser Revolution zu sein?",
+    "contactButton": "Lassen Sie uns im Detail Besprechen"
+  }
+} 

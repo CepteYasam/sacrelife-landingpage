@@ -1,0 +1,484 @@
+{
+  "header": {
+    "navigation": {
+      "problem": "Sorun",
+      "solution": "Çözüm", 
+      "features": "Özellikler",
+      "roadmap": "Yol Haritası",
+      "market": "Pazar",
+      "competition": "Rekabet",
+      "financials": "Finansallar",
+      "team": "Ekip",
+      "investment": "Yatırım Yap"
+    },
+    "buttons": {
+      "investNow": "Yatırım Yap",
+      "changeLanguage": "Dil Değiştir",
+      "toggleTheme": "Karanlık Modu Değiştir",
+      "openMenu": "Menüyü Aç"
+    },
+    "languages": {
+      "turkish": "Türkçe",
+      "english": "English",
+      "spanish": "Español",
+      "french": "Français",
+      "german": "Deutsch",
+      "italian": "Italiano",
+      "portuguese": "Português",
+      "russian": "Русский",
+      "arabic": "العربية"
+    }
+  },
+  "hero": {
+    "mainTitle": "Türkiye'nin Sağlık Verisini",
+    "subtitle": "Anlamlı Kılan Akıllı Ekosistem",
+    "description": "SacreLife, dağınık sağlık verilerini hem hastalar hem de doktorlar için anlamlı içgörülere ve proaktif eylemlere dönüştüren, yapay zeka destekli bir sağlık devrimidir.",
+    "buttons": {
+      "investmentOpportunity": "Yatırım Fırsatını Keşfedin",
+      "seeFeatures": "Özellikleri Gör"
+    }
+  },
+  "problem": {
+    "sectionTitle": "Çözdüğümüz Sorunlar",
+    "title": "Sağlık Sisteminin Kökten Gelen 10 Büyük Verimsizliği",
+    "subtitle": "SacreLife, hem hastaların hem de doktorların günlük olarak karşılaştığı, sistemin temelindeki iletişim, takip ve yönetim sorunlarını yapay zeka ile ortadan kaldırır.",
+    "problemLabel": "Sorun:",
+    "solutionLabel": "SacreLife Çözümü:",
+    "problems": {
+      "1": {
+        "title": "İletişim Eksikliği ve Bilgi Karmaşası",
+        "description": "Hasta, doktorun kullandığı tıbbi terimleri anlamıyor; tedavi sürecini tam olarak kavrayamıyor ve bu da güven eksikliğine yol açıyor.",
+        "solution": "Yapay zeka, her tıbbi terimi sade ve anlaşılır bir dille açıklar. Hasta ne yaşadığını ve ne yapması gerektiğini net olarak anlar."
+      },
+      "2": {
+        "title": "Geç Müdahale ve Önlenebilir Komplikasyonlar",
+        "description": "Tansiyon, şeker gibi kronik değerler, hasta tarafından düzenli takip edilmediği için riskli seviyeye ulaşana kadar fark edilmiyor.",
+        "solution": "Yapay zeka, verileri sürekli analiz ederek \"erken uyarı\" sistemiyle riskli durumları hem hastaya hem doktora bildirir, önleyici sağlık hizmeti devreye girer."
+      },
+      "3": {
+        "title": "İlaçların Unutulması veya Düzensiz Kullanımı",
+        "description": "Hastalar ilaçlarını zamanında almayı unutuyor, bu da tedavinin etkinliğini düşürüyor ve doktor bu durumdan haberdar olmuyor.",
+        "solution": "Akıllı hatırlatmalar gönderilir, hasta uygulamaya \"aldım\" olarak işaretler. Doktor, kullanım geçmişini anlık olarak görerek tedaviyi optimize edebilir."
+      },
+      "4": {
+        "title": "Bekleme Süreleri ve Randevu Kaosu",
+        "description": "Hastalar hastaneye erken gidiyor, uzun süre bekliyor ve zamanları verimsiz geçiyor. Bu durum hasta memnuniyetini düşürüyor.",
+        "solution": "Yapay zeka, hastaya canlı olarak bekleyen kişi sayısını ve tahmini bekleme süresini gösterir. Hasta zamanını verimli planlar."
+      },
+      "5": {
+        "title": "Hastaya Uygun Tedavi Bilgisinin Eksikliği",
+        "description": "Hasta, hastalığı ve nasıl yaşaması gerektiği hakkında yeterli ve güvenilir bilgiye ulaşamıyor, internetteki bilgi kirliliğinde kayboluyor.",
+        "solution": "Yapay zeka, hastanın kronik rahatsızlıklarına özel, doğrulanmış ve kişiselleştirilmiş bilgilendirici içerikler (makale, video, rehber) sunar."
+      },
+      "6": {
+        "title": "Randevu Öncesi Hazırlıksızlık",
+        "description": "Doktor, hastayı hiç tanımadan görüşmeye başlıyor; değerli muayene süresi hastanın geçmişini öğrenmekle geçiyor, süreç uzuyor.",
+        "solution": "Hasta randevudan önce kısa sorulara yanıt verir, bu bilgiler doktora iletilir. Muayene daha hazırlıklı, hızlı ve verimli olur."
+      },
+      "7": {
+        "title": "Yakınların Sağlık Durumunu Takip Edememe",
+        "description": "Yaşlı veya çocuk bireylerin sağlık durumu (ilaç kullanımı, randevular) aile bireyleri tarafından uzaktan ve etkin bir şekilde izlenemiyor.",
+        "solution": "Uygulama, hasta yakınlarının sağlık süreçlerini izlemeye olanak tanır. \"Dijital koruyucu melek\" gibi çalışarak aile boyu güvence sağlar."
+      },
+      "8": {
+        "title": "Doktorların İletişim Yükü ve Tükenmişliği",
+        "description": "Doktorlar, yoğun hasta temposunda her hastayla birebir iletişim kurmaya ve standart bilgileri tekrarlamaya yetişemiyor.",
+        "solution": "Doktor, yapay zekaya hastaya iletilmesini istediği standart mesajları tanımlar; sistem bunu otomatik olarak ileterek doktorun yükünü azaltır."
+      },
+      "9": {
+        "title": "Malzeme ve Stok Yetersizlikleri",
+        "description": "Kliniklerde ilaçlar veya sarf malzemeleri plansızca tükenebiliyor, bu da hizmetin aksamasına neden olabiliyor.",
+        "solution": "Yapay zeka stok kullanımını izler, azalan ürünler için otomatik uyarı ve tedarik önerisi sunarak kliniğin operasyonel verimliliğini artırır."
+      },
+      "10": {
+        "title": "Geri Bildirimin Ulaşılamaması",
+        "description": "Hasta memnuniyeti veya şikayetleri çoğu zaman doktora ulaşmaz, bu da hizmet kalitesinin artırılmasının önünde bir engeldir.",
+        "solution": "Yapay zeka, muayene veya ameliyat sonrası hasta memnuniyetini ölçer, sorunları doktora iletir ve gerekirse geri dönüş sürecini başlatır."
+      }
+    }
+  },
+  "solution": {
+    "sectionTitle": "Çözümümüz",
+    "title": "e-Nabız'ı Akıllandıran Platform",
+    "subtitle": "SacreLife, e-Nabız'a rakip değil, onu tamamlayan bir \"akıllı katman\"dır. Dağınık verileri, hayat kurtaran içgörülere dönüştürürüz.",
+    "tabs": {
+      "patient": "Hasta İçin",
+      "doctor": "Doktor İçin"
+    },
+    "patientValue": {
+      "title": "Hastaya Sunduğumuz Değer:",
+      "subtitle": "Sağlığının Kontrolünü Eline Al",
+      "benefits": {
+        "1": "Tıbbi Çevirmen: Karmaşık raporları anlaşılır hale getirir.",
+        "2": "Proaktif Uyarı Sistemi: Riskleri önceden tespit eder ve uyarır.",
+        "3": "Akıllı İlaç Asistanı: Tedaviye uyumu artırır ve takip eder."
+      }
+    },
+    "doctorValue": {
+      "title": "Doktora Sunduğumuz Değer:",
+      "subtitle": "Verimliliği Artırın, Hastaya Odaklanın",
+      "benefits": {
+        "1": "Akıllı Randevu Özeti: Her randevuya tam hazırlıklı girin.",
+        "2": "Otomatik Hasta Takibi: Muayene sonrası süreçleri otomatikleştirin.",
+        "3": "Sanal Asistan: İdari yükü azaltın, zamandan kazanın."
+      }
+    },
+    "phoneDemo": {
+      "patientWelcome": "Hoş Geldiniz, Ahmet Bey",
+      "patientSubtitle": "Sağlık verileriniz sizin için anlamlandırıldı.",
+      "doctorWelcome": "Hoş Geldiniz, Dr. Elif Hanım",
+      "doctorSubtitle": "Sıradaki hastanız için akıllı özet hazır.",
+      "nextPatient": "Sıradaki Hasta: Ahmet Yılmaz",
+      "appointmentTime": "Randevu: 14:30 - Genel Kontrol",
+      "aiAlert": "AI Uyarısı",
+      "creatinineAlert": "Son 6 ayda Kreatinin %20 artış trendinde. Böbrek fonksiyonları kontrol edilmeli.",
+      "medicationCompliance": "İlaç Uyumu",
+      "complianceNote": "Tansiyon ilacı kullanımında son 1 haftada %75 uyum. Düşük uyum hakkında görüşülmeli.",
+      "proactiveWarning": "Proaktif Uyarı",
+      "creatinineIncrease": "Kreatinin değeriniz son 6 ayda %20 arttı. Detayları inceleyin.",
+      "medicationReminder": "İlaç Hatırlatma",
+      "medicationTime": "15 dakika sonra tansiyon ilacınızı alma zamanı.",
+      "upcomingAppointment": "Yaklaşan Randevu",
+      "appointmentTomorrow": "Yarın 14:30'da Dr. Elif Yılmaz ile randevunuz var."
+    }
+  },
+  "features": {
+    "sectionTitle": "Platform Yetenekleri",
+    "title": "Uçtan Uca Akıllı Sağlık Ekosistemi",
+    "subtitle": "SacreLife, hasta ve doktor yolculuğunun her adımını kolaylaştıran, yapay zeka destekli, bütünsel bir çözüm sunar.",
+    "categories": {
+      "patientSafety": "Hasta Güçlendirme ve Güvenlik",
+      "doctorEfficiency": "Doktor & Klinik Verimliliği",
+      "aiPower": "Yapay Zeka ve Veri Gücü",
+      "integrations": "Ekosistem Entegrasyonları"
+    },
+    "items": {
+      "1": {
+        "title": "Akıllı Acil Müdahale Sistemi",
+        "description": "Yapay zeka, kritik sağlık verilerini izler ve anormallik durumunda tek tuşla doktor, acil servis veya yakınlara anında bildirim gönderir."
+      },
+      "2": {
+        "title": "Yapay Zeka Destekli İçerik ve Video Üretimi",
+        "description": "Doktorlar, yapay zeka ile saniyeler içinde makale ve video fikirleri oluşturabilir, sosyal medya paylaşımlarını otomatikleştirebilir."
+      },
+      "3": {
+        "title": "Tüm Sağlık Belgelerine Tek Noktadan Erişim",
+        "description": "Tahlil, röntgen ve tüm raporlarınıza tek bir yerden güvenle erişin. Geçmiş belgelerinizi de sisteme kolayca yükleyin."
+      },
+      "4": {
+        "title": "Yapay Zeka Destekli Çift Aşamalı Analiz",
+        "description": "Doktor, tahlil sonuçlarını yapay zekaya yorumlatarak ikinci bir görüş alır. Gözden kaçabilecek detaylar yakalanır, teşhis güvenirliği artar."
+      },
+      "5": {
+        "title": "Uzaktan E-Reçete Paylaşımı",
+        "description": "Doktorunuzla yapacağınız online görüşme sonrası e-reçetenizi anında alın, ilaçlarınızı hastaneye gitmeden yenileyin."
+      },
+      "6": {
+        "title": "Akıllı İlaç Takibi ve Geri Bildirim",
+        "description": "İlaç saatlerinizde hatırlatmalar alın, kullanım düzeninizi doktorunuzla paylaşın. Tedaviye yanıtınız anlık olarak izlensin."
+      },
+      "7": {
+        "title": "Yapay Zeka ile Otomatik Randevu Planlama",
+        "description": "Doktorlar, haftalık randevu kotalarını ve saat aralıklarını tanımlar, yapay zeka takvimi en verimli şekilde otomatik olarak doldurur."
+      },
+      "8": {
+        "title": "Yapay Zeka Destekli Danışmanlık",
+        "description": "Hastalar, yapay zekaya sağlık durumları hakkında sorular sorarak ön bilgi ve yönlendirme alabilir. Nihai karar her zaman doktordadır."
+      },
+      "9": {
+        "title": "Doktor Onaylı Yapay Zeka İletişimi",
+        "description": "Doktor, hastaya iletilecek standart bilgileri yapay zekaya tanımlar. Yapay zeka, bu bilgileri sadece doktor onayıyla hastaya aktararak iletişimi hızlandırır."
+      },
+      "10": {
+        "title": "Ameliyat ve Muayene Sonrası Memnuniyet Takibi",
+        "description": "Yapay zeka, operasyon sonrası hastaları arayarak memnuniyetlerini ölçer, şikayetleri not alır ve geri bildirimleri anında doktora iletir."
+      },
+      "11": {
+        "title": "Doğrulanmış Doktor Puanlama ve Geri Bildirim",
+        "description": "Sadece hizmet almış hastalar doktorları puanlayabilir. Bu, adil ve güvenilir bir değerlendirme sistemi oluşturur."
+      },
+      "12": {
+        "title": "Kronik Hastalar İçin Yapay Zeka Bilgilendirmesi",
+        "description": "Diyabet, hipertansiyon gibi kronik hastalıklar için kişiselleştirilmiş video, makale ve rehberler sunularak hastalık yönetimi bilinci artırılır."
+      },
+      "13": {
+        "title": "Kişiselleştirilmiş Yapay Zeka Sağlık Koçluğu",
+        "description": "Yaş, hastalık geçmişi ve yaşam tarzınıza göre kişiye özel beslenme, egzersiz ve yaşam önerileri sunar. Sağlıklı yaşam yolculuğunuzda sizi motive eder."
+      },
+      "14": {
+        "title": "Sesli ve Görüntülü Takip & Uzaktan Muayene",
+        "description": "Platform üzerinden doktorunuzla güvenli ve yüksek kaliteli sesli veya görüntülü görüşmeler gerçekleştirin."
+      },
+      "15": {
+        "title": "Stok Takibi ve Tüketim Yönetimi",
+        "description": "Klinikteki ilaç ve sarf malzemeleri yapay zeka tarafından izlenir. Stok azaldığında sistem otomatik olarak uyarı ve tedarik önerisi sunar."
+      },
+      "16": {
+        "title": "Sigorta Uyumluluğu ve Ödeme Bilgilendirmesi",
+        "description": "Randevu almadan önce, seçeceğiniz doktorun veya tedavinin sigortanız kapsamında olup olmadığını öğrenin, sürpriz ödemelerle karşılaşmayın."
+      },
+      "17": {
+        "title": "Psikoloji Chatbotu (Gizli ve Anonim)",
+        "description": "Stres, kaygı veya depresyon anlarında 7/24 yanınızda olan, sizi anlayan ve gerektiğinde uzmana yönlendiren anonim destek."
+      },
+      "18": {
+        "title": "Yapay Zeka Tabanlı Erken Uyarı Sistemi",
+        "description": "Sağlık verilerinizdeki riskli trendleri (örneğin son 3 tansiyon ölçümünün yükselmesi) tespit ederek olası komplikasyonlar oluşmadan sizi ve doktorunuzu uyarır."
+      },
+      "19": {
+        "title": "Akıllı Asistan ile Canlı Randevu Takibi",
+        "description": "Hasta, kendisinden önce kaç kişi olduğunu ve tahmini bekleme süresini canlı olarak görür. Bekleme odası kaosu sona erer."
+      },
+      "20": {
+        "title": "Hasta Ön Bilgilendirme ve Yönlendirme",
+        "description": "Hasta, randevudan önce şikayetleriyle ilgili birkaç basit soruyu yanıtlar. Doktor, muayeneye hastayı tanıyarak başlar."
+      },
+      "21": {
+        "title": "Acil Durum Bilgileri ve Güvenlik",
+        "description": "Alerjiler, kan grubu, organ bağışı durumu gibi kritik bilgilerinizi ekleyin. Acil bir durumda bu bilgiler hayatınızı kurtarabilir."
+      },
+      "22": {
+        "title": "Yapay Zeka Destekli Tıbbi Terim Açıklamaları",
+        "description": "Doktorunuzun kullandığı bir terimi anlamadınız mı? Üzerine dokunun, yapay zeka size basit ve anlaşılır bir dille açıklasın."
+      },
+      "23": {
+        "title": "Aile Sağlığı Takibi (Dijital Koruyucu Melek)",
+        "description": "Çocuklarınızın veya yaşlı ebeveynlerinizin sağlık süreçlerini, ilaç alımlarını ve randevularını tek bir yerden takip edin."
+      }
+    }
+  },
+  "roadmap": {
+    "sectionTitle": "Ürün Yol Haritası",
+    "title": "Adım Adım Ekosistemi İnşa Etmek",
+    "subtitle": "Vizyonumuzu yönetilebilir ve ticari olarak anlamlı fazlara ayırarak ilerleyeceğiz.",
+    "phases": {
+      "phase1": {
+        "timeline": "İlk 12 Ay",
+        "title": "Faz 1: ÇEKİRDEK",
+        "subtitle": "MVP & Pazar Doğrulama",
+        "focus": "Odak:",
+        "description": "Doktor ve hasta arasındaki temel bilgi ve iletişim köprüsünü kurmak.",
+        "features": {
+          "1": "e-Nabız Entegrasyonu",
+          "2": "Akıllı Randevu Özeti",
+          "3": "Tele-Danışmanlık"
+        }
+      },
+      "phase2": {
+        "timeline": "12-24 Ay",
+        "title": "Faz 2: PLATFORM",
+        "subtitle": "Ekosistemi Genişletme",
+        "focus": "Odak:",
+        "description": "Gelir modelini çeşitlendirmek ve platformu vazgeçilmez kılmak.",
+        "features": {
+          "1": "Klinik Yönetim Paneli",
+          "2": "Sigorta Entegrasyonları",
+          "3": "Aile Sağlığı Modülü"
+        }
+      },
+      "phase3": {
+        "timeline": "24+ Ay",
+        "title": "Faz 3: ZEKÂ",
+        "subtitle": "Derinleşme ve Liderlik",
+        "focus": "Odak:",
+        "description": "Veri liderliği ile pazarın standartlarını belirlemek.",
+        "features": {
+          "1": "Kişiselleştirilmiş AI Sağlık Koçluğu",
+          "2": "Anonim Veri Analitiği",
+          "3": "Giyilebilir Teknoloji Entegrasyonu"
+        }
+      }
+    }
+  },
+  "competition": {
+    "sectionTitle": "Rekabet Avantajı",
+    "title": "Neden Biz Kazanacağız?",
+    "subtitle": "Pazar kalabalık, ancak biz farklı bir oyun oynuyoruz. Rakiplerimiz ya çok genel ya da çok niş. Biz ise ikisinin en iyi yönlerini birleştiriyoruz.",
+    "comparisonTable": {
+      "feature": "Özellik",
+      "sacrelife": "SacreLife",
+      "enabiz": "e-Nabız",
+      "global": "Global Rakipler (Kry, Ada)",
+      "local": "Yerel Randevu Siteleri",
+      "features": {
+        "aiInsights": "AI Destekli Kişisel İçgörü",
+        "enabizIntegration": "e-Nabız Entegrasyonu",
+        "clinicTools": "Klinik Yönetim Araçları (B2B SaaS)",
+        "endToEnd": "Uçtan Uca Sağlık Yönetimi"
+      }
+    },
+    "moats": {
+      "title": "Savunulabilir \"Kale Hendeklerimiz\" (Moats)",
+      "items": {
+        "1": {
+          "title": "Tescilli Veri & AI",
+          "description": "Türkiye'ye özgü veri setleri ile eğitilmiş, kopyalanamaz yapay zeka modelleri."
+        },
+        "2": {
+          "title": "Ağ Etkileri",
+          "description": "B2B2C modelimizle, her yeni doktor ve hasta platformu herkes için daha değerli hale getirir."
+        },
+        "3": {
+          "title": "Derin Entegrasyon",
+          "description": "Hem e-Nabız altyapısına hem de klinik iş akışlarına entegre olarak vazgeçilmez bir araç olmak."
+        }
+      }
+    }
+  },
+  "market": {
+    "sectionTitle": "Strateji",
+    "title": "Pazar Fırsatı",
+    "subtitle": "Büyüyen sağlık teknolojisi pazarında önemli bir fırsat.",
+    "opportunity": {
+      "title": "Pazar Fırsatı",
+      "items": {
+        "1": {
+          "title": "Pazar Büyüklüğü: 500B$+",
+          "description": "Büyüyen sağlık teknolojisi pazarında önemli bir fırsat."
+        },
+        "2": {
+          "title": "Yıllık Büyüme: %15",
+          "description": "Yıllık %15 büyüme ile dinamik bir pazar."
+        },
+        "3": {
+          "title": "Teknoloji Odaklı",
+          "description": "Yapay zeka ve veri analizi ile rekabet avantajı."
+        }
+      }
+    },
+    "revenueStreams": {
+      "title": "Gelir Akışlarımız",
+      "items": {
+        "b2bSaas": {
+          "title": "B2B SaaS - SacreLife Pro (Ana Gelir)",
+          "description": "Klinikler ve doktorlar için aylık/yıllık abonelik paketleri.",
+          "packages": {
+            "basic": "Temel Paket",
+            "pro": "Pro Paket (Önerilen)",
+            "enterprise": "Enterprise Paket"
+          }
+        },
+        "b2b2c": {
+          "title": "B2B2C - Kullanım Bazlı (Büyüme Motoru)",
+          "description": "Platform üzerinden yapılan tele-danışmanlık görüşmelerinden %15 komisyon."
+        },
+        "corporate": {
+          "title": "Kurumsal Sağlık Paketleri",
+          "description": "Çalışanlarına modern sağlık faydaları sunmak isteyen şirketler için yıllık lisanslama."
+        }
+      }
+    }
+  },
+  "financials": {
+    "sectionTitle": "Finansallar",
+    "title": "3 Yıllık Büyüme ve Kârlılık Hedefleri",
+    "subtitle": "Gerçekçi varsayımlara dayanan, iddialı ama ulaşılabilir hedeflerimiz.",
+    "chart": {
+      "yearlyRevenue": "Yıllık Tekrarlayan Gelir (ARR)",
+      "year1": "Yıl 1",
+      "year2": "Yıl 2",
+      "year3": "Yıl 3",
+      "year1Clinics": "Yıl 1 - Ücretli Klinik",
+      "year2Clinics": "Yıl 2 - Ücretli Klinik",
+      "year3Clinics": "Yıl 3 - Ücretli Klinik",
+      "year3Revenue": "Yıl 3 - Yıllık Tekrarlayan Gelir (ARR)",
+      "million": "Milyon",
+      "fundUsageLabel": "Fon Kullanım Dağılımı"
+    },
+    "investment": {
+      "sectionTitle": "Yatırım Talebi",
+      "title": "Vizyonu Gerçeğe Dönüştürmek İçin Stratejik Sermaye",
+      "seedRound": "Tohum Yatırım Turu Talebi",
+      "equity": "Sunulan Hisse",
+      "valuation": "Post-Money Değerleme",
+      "description": "Bu yatırım, 24 aylık bir operasyon gücü sağlayarak bizi pazar liderliğine taşıyacak.",
+      "fundUsage": {
+        "title": "Fon Kullanımı",
+        "distribution": "Dağılım",
+        "product": "Ürün & Teknoloji",
+        "sales": "Satış & Pazarlama",
+        "operations": "Operasyon & Yedek"
+      }
+    }
+  },
+  "team": {
+    "sectionTitle": "Ekip",
+    "title": "Bu Vizyonu Gerçeğe Dönüştürecek Güç",
+    "subtitle": "Teknoloji, sağlık ve iş geliştirme alanlarında deneyimli, tutkulu ve adanmış bir kurucu ekip.",
+    "photoAlt": "Fotoğrafı",
+    "members": {
+      "ceo": {
+        "name": "Adınız Soyadınız",
+        "role": "Kurucu & CEO",
+        "description": "Sağlık teknolojileri ve stratejik yönetim alanında 10+ yıl deneyim. Önceki girişimini başarıyla exit etti."
+      },
+      "cto": {
+        "name": "İsim Soyisim",
+        "role": "Kurucu & CTO",
+        "description": "Yapay zeka ve büyük veri mimarilerinde uzman. Önde gelen teknoloji firmalarında liderlik rolleri üstlendi."
+      },
+      "cmo": {
+        "name": "İsim Soyisim",
+        "role": "Kurucu & CMO",
+        "description": "Dijital pazarlama ve B2B SaaS büyüme stratejilerinde kanıtlanmış başarı. Pazara giriş uzmanı."
+      }
+    }
+  },
+  "whyNow": {
+    "sectionTitle": "Neden Şimdi?",
+    "title": "Doğru Zamanda, Doğru Pazarda: Türkiye'nin Kaçınılmaz Sağlık Devrimi",
+    "subtitle": "Sağlık sektöründe üç büyük ve geri döndürülemez dalga aynı anda yaşanıyor. SacreLife, bu mega trendlerin kesişim noktasında doğdu.",
+    "trends": {
+      "dataExplosion": {
+        "title": "Veri Patlaması",
+        "description": "e-Nabız ile 78 Milyon+ vatandaşın verisi dijitalleşti. Bu, işlenmeyi bekleyen dev bir veri hazinesi."
+      },
+      "aiMaturity": {
+        "title": "Yapay Zeka Olgunluğu",
+        "description": "Yapay zeka artık tıbbi verilerden anlamlı sonuçlar üretebilen, kanıtlanmış bir analitik güç."
+      },
+      "behavioralChange": {
+        "title": "Davranışsal Değişim",
+        "description": "Pandemi sonrası hem hastalar hem de doktorlar dijital sağlık araçlarını benimsedi ve bu alışkanlık kalıcı oldu."
+      }
+    }
+  },
+  "investment": {
+    "sectionTitle": "Yatırım Talebi",
+    "title": "Sağlığın geleceğine katılın",
+    "subtitle": "Sağlık devriminin bir parçası olun",
+    "description": "Sadece bir uygulamaya değil, hem insan hayatına hem de sermayeye dokunan, ölçeklenebilir ve kârlı bir ekosisteme ortak olun.",
+    "cta": "Bizimle İletişime Geçin",
+    "finalCta": "Geleceğin Sağlık Altyapısına Yatırım Yapın."
+  },
+  "footer": {
+    "copyright": "2025 SacreLife Inc. Tüm hakları saklıdır.",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Şartları"
+  },
+  "contact": {
+    "title": "Yatırımcı İlişkileri",
+    "description": "Detaylı bilgi ve görüşme talepleriniz için bizimle iletişime geçin.",
+    "name": "Adınız Soyadınız",
+    "email": "E-posta Adresiniz",
+    "message": "Mesajınız",
+    "send": "Gönder",
+    "success": "Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.",
+    "close": "Kapat"
+  },
+  "investmentModal": {
+    "title": "Dijital Sağlık: Patlamaya Hazır Bir Pazar",
+    "subtitle": "Rakamlar, neden şimdi yatırım yapmanız gerektiğini anlatıyor.",
+    "close": "Kapat",
+    "globalMarket": "Küresel Dijital Sağlık Pazarı",
+    "aiMarket": "Sağlıkta Yapay Zeka Pazarı",
+    "growthTitle": "Neden Bu Büyüme Kaçınılmaz?",
+    "chronicDiseases": "Artan Kronik Hastalıklar: Dünya genelinde yaşlanan nüfus, sürekli takip ve proaktif yönetim gerektiren çözümlere olan talebi artırıyor.",
+    "consumerDemand": "Tüketici Talebi: Hastalar artık sağlık yolculuklarında daha aktif bir rol almak, verilerine erişmek ve kişiselleştirilmiş hizmetler talep ediyor.",
+    "costPressure": "Maliyet Baskısı: Sağlık sistemleri, yapay zeka ve otomasyon ile verimliliği artırarak ve önleyici bakımı teşvik ederek maliyetleri düşürmek zorunda.",
+    "readyQuestion": "Bu devrimin bir parçası olmaya hazır mısınız?",
+    "contactButton": "Detaylı Görüşelim",
+    "expectedValue2034": "2034'e kadar ulaşılması beklenen değer (%21.2 CAGR).",
+    "expectedGrowthCAGR": "2032'ye kadar beklenen yıllık bileşik büyüme oranı (CAGR)."
+  }
+} 
