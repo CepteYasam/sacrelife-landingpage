@@ -28,9 +28,16 @@ const nextConfig: NextConfig = {
         ...config.resolve.fallback,
         fs: false,
         path: false,
+        crypto: false,
+        stream: false,
+        util: false,
       };
     }
     return config;
+  },
+  // Statik export için gerekli
+  experimental: {
+    esmExternals: false,
   },
 };
 

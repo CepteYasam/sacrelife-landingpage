@@ -4,10 +4,10 @@ frontend:
     preBuild:
       commands:
         - npm ci
+        - npm cache clean --force
     build:
       commands:
         - npm run build
-        - npm run export
   artifacts:
     baseDirectory: out
     files:
