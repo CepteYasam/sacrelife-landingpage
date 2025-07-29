@@ -18,6 +18,20 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: false,
+  // Statik export için gerekli ayarlar
+  skipTrailingSlashRedirect: true,
+  skipMiddlewareUrlNormalize: true,
+  // i18n için gerekli webpack konfigürasyonu
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+      };
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
