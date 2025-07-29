@@ -4,7 +4,6 @@ frontend:
     preBuild:
       commands:
         - npm ci
-        - npm cache clean --force
     build:
       commands:
         - npm run build
@@ -15,4 +14,3 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-      - .next/cache/**/* 
